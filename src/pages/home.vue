@@ -62,10 +62,10 @@ export default {
 <style>
   .content{
     width: 80%;
-    margin: 10px auto;
+    margin: 6% auto;
   }
   .el-col {
-    margin: 10px 0;
+    margin: 8px 0;
   }
   .bg-purple {
     background: #d3dce6;

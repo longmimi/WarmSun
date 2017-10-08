@@ -64,7 +64,7 @@ export default {
     float: left;
     line-height: 55px;
     font-size: 30px;
-    margin-left: 20px;
+    margin-left: 2%;
     color: #48576A;
     user-select: none;
   }
