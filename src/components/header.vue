@@ -7,12 +7,16 @@
         </el-menu-item>
         <el-submenu index="2">
           <template slot="title">志愿服务</template>
-          <el-menu-item index="2-1">
-            <router-link :to="{name:'oldpeople'}">老人</router-link>
-          </el-menu-item>
-          <el-menu-item index="2-2">
-            <router-link :to="{name:'volunteer'}">志愿者</router-link>
-          </el-menu-item>
+          <router-link :to="{name:'oldpeople'}">
+            <el-menu-item index="2-1">
+              老人
+            </el-menu-item>
+          </router-link>
+          <router-link :to="{name:'volunteer'}">
+            <el-menu-item index="2-2">
+              志愿者
+            </el-menu-item>
+          </router-link>
         </el-submenu>
         <el-menu-item index="3">
           <router-link :to="{name:'policy'}">政策展示</router-link>
@@ -26,9 +30,11 @@
         <el-submenu index="6">
           <template slot="title">关于我们</template>
           <el-menu-item index="6-1">微信</el-menu-item>
-          <el-menu-item index="6-2">
-            <router-link :to="{name:'about'}">关于我们</router-link>
-          </el-menu-item>
+          <router-link :to="{name:'about'}">
+            <el-menu-item index="6-2">
+              关于我们
+            </el-menu-item>
+          </router-link>
         </el-submenu>
       </el-menu>
   </div>
