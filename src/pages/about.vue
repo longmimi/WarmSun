@@ -1,7 +1,7 @@
 <template>
-  <div id="oldPeople">
+  <div id="about">
     <div class="content">
-       这是老人
+       这是关于
     </div>
   </div>
 </template>
@@ -9,7 +9,7 @@
 <script>
 
 export default {
-  name: 'oldPeople',
+  name: 'about',
   data () {
     return {
       
