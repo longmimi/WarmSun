@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="home">
     <div class="content">
       <el-row>
         <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
@@ -24,7 +24,7 @@
 <script>
 
 export default {
-  name: 'app',
+  name: 'home',
   data () {
     return {
       

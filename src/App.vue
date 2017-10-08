@@ -3,26 +3,9 @@
     <nxyHeader></nxyHeader>
 
     <div class="background"><!-- background内部显示路由的不同页面 -->
-      <div class="content"><!-- 为测试整体效果，被router-view替换 -->
-        <el-row>
-          <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-          <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
-          <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-          <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
-          <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-          <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
-        </el-row>
-        <el-row>
-          <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-          <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
-          <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-          <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
-          <el-col :span="4"><div class="grid-content bg-purple"></div></el-col>
-          <el-col :span="4"><div class="grid-content bg-purple-light"></div></el-col>
-        </el-row>
-      </div>
+      <router-view></router-view>
     </div><!-- background_end -->
-    
+
     <nxyFooter></nxyFooter>
   </div>
 </template>
@@ -35,11 +18,11 @@ export default {
   name: 'app',
   data () {
     return {
-      
+
     };
   },
   methods: {
-    
+
   },
   components:{
     nxyHeader,
@@ -64,11 +47,12 @@ export default {
     flex: 1 0 auto;
   }
   /* <<<<<<<<<<<<<<<<<页面整体布局，固定header background，footer三部分 */
-  
+
   /* 初始为测试效果添加，之后可删>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
   .content{
     width: 80%;
     margin: 10px auto;
+    margin-top: 150px;
   }
   .el-row {
     margin-bottom: 20px;
