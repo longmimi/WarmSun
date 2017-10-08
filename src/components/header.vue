@@ -1,7 +1,10 @@
 <template>
   <div id="header">
       <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-        <div class="logo" id="logo">暖夕阳</div>
+        <div class="logo" id="logo">
+          <img src="../assets/logo.png" alt="logo">
+          <b>暖</b>夕阳
+        </div>  
         <el-menu-item index="1">
           <router-link :to="{name:'home'}">首页</router-link>
         </el-menu-item>
@@ -64,8 +67,12 @@ export default {
     float: left;
     line-height: 55px;
     font-size: 30px;
-    margin-left: 2%;
-    color: #48576A;
+    color: #475669;
     user-select: none;
+  }
+  .logo img{
+    float: left;
+    height: 20px;
+    margin: 16px 6px 16px 20px;
   }
 </style>
