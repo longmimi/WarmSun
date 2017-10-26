@@ -30,8 +30,8 @@
                                     <div class="grid-content bg-oldman">
                                         <div class="oldman">
                                             <el-carousel height="160px">
-                                                <el-carousel-item v-for="(pic,index) in oldmanImages"  class="carousel-item">
-                                                  <img :src="pic.src" :alt="pic.name" class="oldmanPic">                         
+                                                <el-carousel-item v-for="(item,index) in oldmanImages"  :key="item.name" class="carousel-item">
+                                                  <img :src="item.src" :alt="item.name" class="oldmanPic">                         
                                                 </el-carousel-item>
                                                 <div class="oldmanTitle">
                                                     <span>需要帮助的老人们</span>
@@ -45,7 +45,7 @@
                                     <div class="grid-content bg-volunteer"> 
                                         <div class="volunteer">
                                             <el-carousel height="160px">
-                                                <el-carousel-item v-for="(item,index) in volunteerImages"  class="carousel-item">
+                                                <el-carousel-item v-for="(item,index) in volunteerImages"  :key="item.name" class="carousel-item">
                                                   <img :src="item.src" :alt="item.name" class="oldmanPic">                         
                                                 </el-carousel-item>
                                                 <div class="oldmanTitle">
@@ -118,39 +118,44 @@
         name: 'home',
         data() {
             return {
-                oldmanImages: [{
-                    "name": 1,
-                    "src": require("../assets/oldman/1.jpg")
+                oldmanImages: [
+                {
+                    name: "1",
+                    src: require("../assets/oldman/1.jpg")
                 }, {
-                    "name": 2,
-                    "src": require("../assets/oldman/2.jpg")
+                    name: "2",
+                    src: require("../assets/oldman/2.jpg")
                 }, {
-                    "name": 3,
-                    "src": require("../assets/oldman/3.jpg")
+                    name: "3",
+                    src: require("../assets/oldman/3.jpg")
                 }, {
-                    "name": 4,
-                    "src": require("../assets/oldman/4.jpg")
+                    name: "4",
+                    src: require("../assets/oldman/4.jpg")
                 }, {
-                    "name": 5,
-                    "src": require("../assets/oldman/5.jpg")
-                }],
-                volunteerImages: [{
-                    "name": 1,
-                    "src": require("../assets/volunteer/1.jpg")
+                    name: "5",
+                    src: require("../assets/oldman/5.jpg")
+                }
+                ],
+                volunteerImages: [
+                {
+                    name: "6",
+                    src: require("../assets/volunteer/1.jpg")
                 }, {
-                    "name": 2,
-                    "src": require("../assets/volunteer/2.jpg")
+                    name: "7",
+                    src: require("../assets/volunteer/2.jpg")
                 }, {
-                    "name": 3,
-                    "src": require("../assets/volunteer/3.jpg")
+                    name: "8",
+                    src: require("../assets/volunteer/3.jpg")
                 }, {
-                    "name": 4,
-                    "src": require("../assets/volunteer/4.jpg")
+                    name: "9",
+                    src: require("../assets/volunteer/4.jpg")
                 }, {
-                    "name": 5,
-                    "src": require("../assets/volunteer/5.jpg")
-                }],
-                activitesList: [{
+                    name: "10",
+                    src: require("../assets/volunteer/5.jpg")
+                }
+                ],
+                activitesList: [
+                {
                     title: "活动一",
                     content: "重视老年人的心理健康问题。"
                 }, {
@@ -159,7 +164,8 @@
                 }, {
                     title: "活动一",
                     content: "重视老年人的心理健康问题"
-                }]
+                }
+                ]
             };
         },
         methods: {
