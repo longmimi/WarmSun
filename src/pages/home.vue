@@ -2,31 +2,42 @@
   <div id="home">
     <div class="content">
         <el-row :gutter="20">
-          <el-col :lg="4" :xs="0"><div class="grid-content bg-liubai">liubai</div></el-col>
-          <el-col :lg="4" :xs="8"><div class="grid-content bg-jzfw">jzfw</div></el-col>
-          <el-col :lg="9" :xs="12">
+          <el-col :lg="6" :md="6" :sm="24" :xs="24"><!-- 最左 -->
+            <div class="grid-content bg-jzfw ">
+                <el-table
+                    :data="tableData"
+                    stripe
+                    style="width: 100%">
+                    <el-table-column
+                      prop="date"
+                      label="日期"
+                      width="100%">
+                    </el-table-column>
+                </el-table>
+                <!-- <div class="blurBox"></div> -->
+            </div>
+          </el-col><!-- 最左end -->
+          <el-col :lg="14" :md="14" :sm="24" :xs="24"><!-- 中间 -->
             <div class="grid-content bg-purple">
 
               <el-row>
-                <el-col :lg="24">
-                  <div class="grid-content bg-weather">
-                    <div class="weather">
-                        天气插件
-                    </div>
-                  
+                <el-col :lg="24" :md="24" :sm="24" :xs="24">
+                  <div class="grid-content bg-weather ">
+                    天气预报
+                    <!-- <div class="blurBox"></div> -->
                   </div>
                 </el-col>
               
               </el-row>
 
               <el-row>
-                <el-col :lg="24">
+                <el-col :lg="24" :md="24" :sm="24" :xs="24">
                   <div class="grid-content bg-other">
                       <el-row :gutter="20">
-                          <el-col :lg="15">
+                          <el-col :lg="15" :md="15" :sm="24" :xs="24">
                             <div class="grid-content bg-left">
                                 <el-row>
-                                  <el-col :lg="11">
+                                  <el-col :lg="11" :md="11":sm="11" :xs="11">
                                     <div class="grid-content bg-oldman">
                                         <div class="oldman">
                                             <el-carousel height="160px">
@@ -40,8 +51,8 @@
                                         </div>                                  
                                     </div>
                                   </el-col>
-                                  <el-col :lg="1"><div class="grid-content bg-liubai"></div></el-col>
-                                  <el-col :lg="11">
+                                  <el-col :lg="1" :md="1":sm="1" :xs="1"><div class="grid-content bg-liubai"></div></el-col>
+                                  <el-col :lg="11" :md="11" :sm="11" :xs="11">
                                     <div class="grid-content bg-volunteer"> 
                                         <div class="volunteer">
                                             <el-carousel height="160px">
@@ -56,8 +67,8 @@
                                     </div>
                                   </el-col>
                                 </el-row>
-                                <el-row>
-                                  <el-col :lg="23">
+                                <el-row><!-- 活动空间 -->
+                                  <el-col :lg="23" :md="23":sm="24" :xs="24">
                                     <div class="grid-content bg-activities">
                                       <nav class="grid-content activitiesTitle"><h3>活动空间</h3>
                                       </nav> 
@@ -70,47 +81,49 @@
                                               {{cont.content}}
                                             </a></p>
                                           </li>
-                                        </ul>                               
+                                        </ul> 
+                                        <!-- <div class="blurBox"></div>                               -->
                                     </div>
                                   </el-col>
-                                </el-row>
+                                </el-row><!-- 活动空间end -->
                             </div>
                           </el-col>
 
-                          <el-col :lg="9"><div class="grid-content bg-zczs">zczs</div></el-col>
+                          <el-col :lg="9" :md="9" :sm="24" :xs="24"><div class="grid-content bg-zczs">zczs</div></el-col>
                       </el-row>
                   </div>
                 </el-col>
               </el-row>
 
             </div>
-          </el-col>
-          <el-col :lg="3" :xs="4">
+          </el-col><!-- 中间end -->
+          <!-- 最右列 -->
+          <el-col :lg="4" :md="4" :sm="24" :xs="24">
             <div class="grid-content bg-right-info">
                 <el-row>
-                  <el-col :lg="24" :xs="24">
+                  <el-col :lg="24" :md="24" :sm="24" :xs="24">
                     <div class="grid-content bg-person-center">person-center                                
                     </div>
                   </el-col>
                 </el-row>
                 <el-row>
-                  <el-col :lg="24" :xs="24">
+                  <el-col :lg="24" :md="24" :sm="24" :xs="24">
                     <div class="grid-content bg-tongzhi">tongzhi                                
                     </div>
                   </el-col>
                 </el-row>
                 <el-row>
-                  <el-col :lg="24" :xs="24">
+                  <el-col :lg="24" :md="24" :sm="24" :xs="24">
                     <div class="grid-content bg-about">  about                              
                     </div>
                   </el-col>
                 </el-row>
             </div>
           </el-col>
-          <el-col :lg="4" :xs="0"><div class="grid-content bg-liubai"></div></el-col>
+          <!-- end最右列 -->
         </el-row>
-    </div>
-  </div>
+    </div><!-- content_end -->
+  </div><!-- home_end -->
 </template>
 
 <script>
@@ -119,36 +132,18 @@
         data() {
             return {
                 oldmanImages: [{
-                    "name": 1,
-                    "src": require("../assets/oldman/1.jpg")
+                    "name": "oldman1",
+                    "src": require("../assets/oldman/oldman1.jpg")
                 }, {
-                    "name": 2,
-                    "src": require("../assets/oldman/2.jpg")
-                }, {
-                    "name": 3,
-                    "src": require("../assets/oldman/3.jpg")
-                }, {
-                    "name": 4,
-                    "src": require("../assets/oldman/4.jpg")
-                }, {
-                    "name": 5,
-                    "src": require("../assets/oldman/5.jpg")
+                    "name": "oldman2",
+                    "src": require("../assets/oldman/oldman2.jpg")
                 }],
                 volunteerImages: [{
-                    "name": 1,
-                    "src": require("../assets/volunteer/1.jpg")
+                    "name": "volunteer1",
+                    "src": require("../assets/volunteer/volunteer1.jpg")
                 }, {
-                    "name": 2,
-                    "src": require("../assets/volunteer/2.jpg")
-                }, {
-                    "name": 3,
-                    "src": require("../assets/volunteer/3.jpg")
-                }, {
-                    "name": 4,
-                    "src": require("../assets/volunteer/4.jpg")
-                }, {
-                    "name": 5,
-                    "src": require("../assets/volunteer/5.jpg")
+                    "name": "volunteer2",
+                    "src": require("../assets/volunteer/volunteer2.jpg")
                 }],
                 activitesList: [{
                     title: "活动一",
@@ -173,7 +168,9 @@
 
 <style>
     .content {
-        margin-top: 140px;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 40px;
         text-align: center;
         z-index: 1;
     }
@@ -192,21 +189,18 @@
     .bg-weather {
         background: white;
         height: 160px;
+        z-index: 1;
+        position: relative;
+        overflow: hidden;
     }
     
-    .bg-weather:before {
-        -webkit-filter: blur(20px);
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(255, 255, 255, 0.8);
-    }
     
     .bg-jzfw {
         background: white;
         height: 600px;
+        z-index: 1;
+        position: relative;
+        overflow: hidden;
     }
     
     .bg-other {
@@ -237,6 +231,10 @@
     .bg-activities {
         background: white;
         height: 240px;
+        z-index: 1;
+        position: relative;
+        overflow: hidden;
+        /* background-color: rgba(255, 255, 255, 0.8); */
     }
     
     .bg-right-info {
@@ -281,7 +279,7 @@
     
     .oldmanPic {
         width: 100%;
-        height: 140px;
+        /* height: 140px; */
         border-radius: 5px;
     }
     
@@ -296,6 +294,7 @@
         top: 15px;
         left: 20px;
         font-weight: bond;
+        /* color: #FFFFFF; */
     }
     
     .activitesContent {
@@ -307,7 +306,7 @@
     }
     
     .activitesList span {
-        color: green;
+        /* color: #FFFFFF; */
     }
     
     .activitesList {
@@ -319,7 +318,7 @@
         width: 100%;
         text-align: left;
         text-indent: 10px;
-        color: black;
+        /* color: #FFFFFF; */
     }
     
     .activites-article-title:hover {
@@ -334,11 +333,26 @@
         word-wrap: break-word;
         text-align: left;
         text-indent: 20px;
-        color: black;
+        /* color: #FFFFFF; */
     }
     
     .activites-article-content:hover {
         color: #c90;
         text-decoration: underline;
     }
+
+    .blurBox{
+      position: absolute;
+      width:500%;
+      height:100%;
+      margin-left:-50%;
+      top:-10px;
+      background:url(../assets/bg.jpg) no-repeat center center fixed  ;
+      -webkit-filter: blur(30px);
+      filter: blur(30px);
+      z-index: -1;
+    }
+
+
+
 </style>
