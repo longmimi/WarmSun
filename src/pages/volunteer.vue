@@ -6,7 +6,7 @@
           <span style="line-height: 36px;">志愿者展示</span>
         </div>
         <div v-for="o in 4" :key="o" class="text item">
-          {{'内容 ' + o }}
+          {{'内容 ' + o } this is test
         </div>
       </el-card>
     </div>
