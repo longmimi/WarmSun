@@ -3,7 +3,7 @@
     <nxyHeader></nxyHeader>
 
     <div class="background"><!-- background内部显示路由的不同页面 -->
-      <router-view></router-view>
+      <router-view class=""></router-view>
     </div><!-- background_end -->
 
     <nxyFooter></nxyFooter>
@@ -45,9 +45,10 @@ export default {
   }
   .background{
     flex: 1 0 auto;
-    background: url(./assets/bg.jpg);
+    background: url(./assets/bg.jpg)no-repeat center center fixed;
     background-size:100% 100%;
   }
+
   /* <<<<<<<<<<<<<<<<<页面整体布局，固定header background，footer三部分 */
 
   
