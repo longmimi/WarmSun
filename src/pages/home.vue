@@ -125,8 +125,10 @@
                 <el-row><!-- person-center --> 
                   <el-col :lg="24" :md="24" :sm="24" :xs="24">
                     <div class="grid-content bg-person-center">
-                        <img src="../assets/headImg.jpg" alt="headImg" class="headImg">
-                        <a href="#" class="userId"><strong>{{userId}}</strong></a>                              
+                        <a href="#" class="userId">
+                            <img src="../assets/headImg.jpg" alt="headImg" class="headImg">
+                            <strong class="userId">{{userId}}</strong>
+                        </a>                             
                     </div>
                   </el-col>
                 </el-row><!-- person-center_end --> 
@@ -304,11 +306,16 @@
         height: 100px;
         margin: 4px;     
     }
-
+    .bg-person-center .headImg:hover{
+        border: 8px solid rgba(255, 255, 255, 0.6);
+    }
     .bg-person-center .userId{
         font-size: 14px;
         display: block;
         color: #5A5E66;
+    }
+    .bg-person-center .userId:hover{
+        color: #878D99;
     }
     
     .bg-tongzhi {
@@ -377,6 +384,7 @@
     }
     .activitesList:hover {
         border-left: 6px solid #EB9E05;
+        box-shadow: -3px 3px 6px #CBCBCB;
     }
     
     .activites-article-title {
