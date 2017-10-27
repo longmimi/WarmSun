@@ -45,8 +45,8 @@
                                     <div class="grid-content bg-oldman">
                                         <div class="oldman">
                                             <el-carousel height="160px">
-                                                <el-carousel-item v-for="(pic,index) in oldmanImages"  class="carousel-item">
-                                                  <img :src="pic.src" :alt="pic.name" class="oldmanPic">                         
+                                                <el-carousel-item v-for="(item,index) in oldmanImages"  :key="item.name" class="carousel-item">
+                                                  <img :src="item.src" :alt="item.name" class="oldmanPic">                         
                                                 </el-carousel-item>
                                                 <!-- <div class="oldmanTitle">
                                                     <span>需要帮助的老人们</span>
@@ -60,7 +60,7 @@
                                     <div class="grid-content bg-volunteer"> 
                                         <div class="volunteer">
                                             <el-carousel height="160px">
-                                                <el-carousel-item v-for="(item,index) in volunteerImages"  class="carousel-item">
+                                                <el-carousel-item v-for="(item,index) in volunteerImages"  :key="item.name" class="carousel-item">
                                                   <img :src="item.src" :alt="item.name" class="oldmanPic">                         
                                                 </el-carousel-item>
                                                 <!-- <div class="oldmanTitle">
