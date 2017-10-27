@@ -44,7 +44,7 @@
                                   <el-col :lg="11" :md="11":sm="11" :xs="11">
                                     <div class="grid-content bg-oldman">
                                         <div class="oldman">
-                                            <el-carousel height="160px">
+                                            <el-carousel height="160px" indicator-position="none">
                                                 <el-carousel-item v-for="(item,index) in oldmanImages"  :key="item.name" class="carousel-item">
                                                   <img :src="item.src" :alt="item.name" class="oldmanPic">                         
                                                 </el-carousel-item>
@@ -59,7 +59,7 @@
                                   <el-col :lg="11" :md="11" :sm="11" :xs="11">
                                     <div class="grid-content bg-volunteer"> 
                                         <div class="volunteer">
-                                            <el-carousel height="160px">
+                                            <el-carousel height="160px" indicator-position="none">
                                                 <el-carousel-item v-for="(item,index) in volunteerImages"  :key="item.name" class="carousel-item">
                                                   <img :src="item.src" :alt="item.name" class="oldmanPic">                         
                                                 </el-carousel-item>
@@ -71,7 +71,7 @@
                                     </div>
                                   </el-col>
                                 </el-row>
-                                <el-row><!-- 活动空间 -->
+                                <el-row ><!-- 活动空间 -->
                                   <el-col :lg="23" :md="23":sm="24" :xs="24">
                                     <div class="grid-content bg-activities">
                                         <nav class="grid-content boxTitle"><h3>活动空间</h3>
@@ -157,13 +157,19 @@
         name: 'home',
         data() {
             return {
-                userId: "王小五",
+                userId: "锅郭",
                 oldmanImages: [{
                     "name": "oldman1",
                     "src": require("../assets/oldman/oldman1.jpg")
                 }, {
                     "name": "oldman2",
                     "src": require("../assets/oldman/oldman2.jpg")
+                }, {
+                    "name": "oldman3",
+                    "src": require("../assets/oldman/oldman3.jpg")
+                }, {
+                    "name": "oldman4",
+                    "src": require("../assets/oldman/oldman4.jpg")
                 }],
                 volunteerImages: [{
                     "name": "volunteer1",
@@ -171,6 +177,12 @@
                 }, {
                     "name": "volunteer2",
                     "src": require("../assets/volunteer/volunteer2.jpg")
+                }, {
+                    "name": "volunteer3",
+                    "src": require("../assets/volunteer/volunteer3.jpg")
+                }, {
+                    "name": "volunteer4",
+                    "src": require("../assets/volunteer/volunteer4.jpg")
                 }],
                 activitesList: [{
                     title: "活动一",
@@ -353,6 +365,7 @@
         width: 100%;
         /* height: 140px; */
         border-radius: 5px;
+        cursor:pointer;
     }
     
     .boxTitle {
@@ -419,6 +432,9 @@
         float: right;
         font-size: 12px;
         margin: 4px;
+    }
+    .moreInfo:hover{
+        color:#ccc;
     }
     .moreInfoFirm{
         float: left;
