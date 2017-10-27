@@ -34,7 +34,7 @@ export default {
 <style>
   .content{
     width: 80%;
-    margin: 6% auto;
+    margin: 2% auto;
   }
   .text {
     font-size: 14px;

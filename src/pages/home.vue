@@ -234,7 +234,7 @@
 <style>
     .content {
         width: 80%;
-        margin: 0 auto;
+        margin: 2% auto;
         margin-top: 40px;
         /* text-align: center; */
         z-index: 1;
