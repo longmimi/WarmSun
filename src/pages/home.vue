@@ -4,16 +4,20 @@
         <el-row :gutter="20">
           <el-col :lg="6" :md="6" :sm="24" :xs="24"><!-- 最左 -->
             <div class="grid-content bg-jzfw ">
-                <el-table
-                    :data="tableData"
-                    stripe
-                    style="width: 100%">
-                    <el-table-column
-                      prop="date"
-                      label="日期"
-                      width="100%">
-                    </el-table-column>
-                </el-table>
+                <nav class="grid-content boxTitle"><h3>家政服务</h3>
+                </nav> 
+                <ul class="grid-content activitesContent">
+                    <li v-for="(cont,index) in housekeepingList" class="activitesList">
+                      <a class="activites-article-title">
+                        {{cont.title}}
+                      </a>                                    
+                      <p><a class="activites-article-content" href="#">
+                      {{cont.content}}
+                      </a></p>
+                      <a href="#" class="moreInfo">了解更多>></a>
+                      <a href="#" class="moreInfoFirm">XXX家政公司</a>
+                    </li>
+                </ul> 
                 <!-- <div class="blurBox"></div> -->
             </div>
           </el-col><!-- 最左end -->
@@ -44,11 +48,11 @@
                                                 <el-carousel-item v-for="(pic,index) in oldmanImages"  class="carousel-item">
                                                   <img :src="pic.src" :alt="pic.name" class="oldmanPic">                         
                                                 </el-carousel-item>
-                                                <div class="oldmanTitle">
+                                                <!-- <div class="oldmanTitle">
                                                     <span>需要帮助的老人们</span>
-                                                </div>
+                                                </div> -->
                                               </el-carousel>                             
-                                        </div>                                  
+                                        </div><!-- oldman_end -->                                  
                                     </div>
                                   </el-col>
                                   <el-col :lg="1" :md="1":sm="1" :xs="1"><div class="grid-content bg-liubai"></div></el-col>
@@ -59,28 +63,30 @@
                                                 <el-carousel-item v-for="(item,index) in volunteerImages"  class="carousel-item">
                                                   <img :src="item.src" :alt="item.name" class="oldmanPic">                         
                                                 </el-carousel-item>
-                                                <div class="oldmanTitle">
+                                                <!-- <div class="oldmanTitle">
                                                   <span>无私的志愿者</span>
-                                                </div>
+                                                </div> -->
                                             </el-carousel>                                            
-                                        </div>  
+                                        </div><!-- volunteer_end -->
                                     </div>
                                   </el-col>
                                 </el-row>
                                 <el-row><!-- 活动空间 -->
                                   <el-col :lg="23" :md="23":sm="24" :xs="24">
                                     <div class="grid-content bg-activities">
-                                      <nav class="grid-content activitiesTitle"><h3>活动空间</h3>
-                                      </nav> 
-                                      <ul class="grid-content activitesContent">
-                                         <li v-for="(cont,index) in activitesList" class="activitesList">
-                                              <a class="activites-article-title"><span>></span>
+                                        <nav class="grid-content boxTitle"><h3>活动空间</h3>
+                                        </nav> 
+                                        <ul class="grid-content activitesContent">
+                                            <li v-for="(cont,index) in activitesList" class="activitesList">
+                                              <a class="activites-article-title">
                                                 {{cont.title}}
                                               </a>                                    
-                                            <p><a class="activites-article-content" href="#">
-                                              {{cont.content}}
-                                            </a></p>
-                                          </li>
+                                              <p><a href="#" class="activites-article-content">
+                                                  {{cont.content}}
+                                              </a>
+                                              </p>
+                                              <a href="#" class="moreInfo">了解更多>></a>
+                                            </li>
                                         </ul> 
                                         <!-- <div class="blurBox"></div>                               -->
                                     </div>
@@ -89,7 +95,23 @@
                             </div>
                           </el-col>
 
-                          <el-col :lg="9" :md="9" :sm="24" :xs="24"><div class="grid-content bg-zczs">zczs</div></el-col>
+                        <el-col :lg="9" :md="9" :sm="24" :xs="24">
+                            <div class="grid-content bg-zczs">
+                                <nav class="grid-content boxTitle"><h3>政策展示</h3>
+                                </nav> 
+                                <ul class="grid-content activitesContent">
+                                    <li v-for="(cont,index) in policyList" class="activitesList">
+                                      <a class="activites-article-title">
+                                        {{cont.title}}
+                                      </a>                                    
+                                      <p><a class="activites-article-content" href="#">
+                                      {{cont.content}}
+                                      </a></p>
+                                      <a href="#" class="moreInfo">了解更多>></a>
+                                    </li>
+                                </ul> 
+                            </div>
+                        </el-col>
                       </el-row>
                   </div>
                 </el-col>
@@ -100,24 +122,26 @@
           <!-- 最右列 -->
           <el-col :lg="4" :md="4" :sm="24" :xs="24">
             <div class="grid-content bg-right-info">
-                <el-row>
+                <el-row><!-- person-center --> 
                   <el-col :lg="24" :md="24" :sm="24" :xs="24">
-                    <div class="grid-content bg-person-center">person-center                                
+                    <div class="grid-content bg-person-center">
+                        <img src="../assets/headImg.jpg" alt="headImg" class="headImg">
+                        <a href="#" class="userId"><strong>{{userId}}</strong></a>                              
                     </div>
                   </el-col>
-                </el-row>
-                <el-row>
+                </el-row><!-- person-center_end --> 
+                <el-row><!-- tongzhi -->
                   <el-col :lg="24" :md="24" :sm="24" :xs="24">
                     <div class="grid-content bg-tongzhi">tongzhi                                
                     </div>
                   </el-col>
-                </el-row>
-                <el-row>
+                </el-row><!-- tongzhi_end -->
+                <el-row><!-- about -->
                   <el-col :lg="24" :md="24" :sm="24" :xs="24">
                     <div class="grid-content bg-about">  about                              
                     </div>
                   </el-col>
-                </el-row>
+                </el-row><!-- about_end -->
             </div>
           </el-col>
           <!-- end最右列 -->
@@ -131,6 +155,7 @@
         name: 'home',
         data() {
             return {
+                userId: "王小五",
                 oldmanImages: [{
                     "name": "oldman1",
                     "src": require("../assets/oldman/oldman1.jpg")
@@ -147,13 +172,39 @@
                 }],
                 activitesList: [{
                     title: "活动一",
-                    content: "重视老年人的心理健康问题。"
+                    content: "重视老年人的心理健康问题心理健康问题重视老年人的心理健康问题心理健康问题心理健康问题。心理健康问题。"
                 }, {
                     title: "活动一",
-                    content: "重视老年人的心理健康问题。"
+                    content: "重视老年人的心理健康问题心理健康问题重视老年人的心理健康问题心理健康问题心理。"
+                }],
+                policyList: [{
+                    title: "政策一",
+                    content: "政策内容政策内容政策内容政策内政策内容政策内容政策政策内容政策内容政策容。"
                 }, {
-                    title: "活动一",
-                    content: "重视老年人的心理健康问题"
+                    title: "政一",
+                    content: "政策内容政策内容政策内容政策内容政策内容政策政策内容政策内容政策政策内容。"
+                }, {
+                    title: "政策一",
+                    content: "政策内容政策内容政策内容政策内容政策政策内容政策内容政策政策内容政策内容政策政策内容政策内容。"
+                }, {
+                    title: "政策",
+                    content: "政策内容政策内容政策政策内容政策内容政策政策内容政策内容政策政策内容政策内容政策内容政策内容。"
+                }],
+                housekeepingList: [{
+                    title: "服务一",
+                    content: "服务服务内容服务内容服务内容服务内容服务内容服务内容服务内容内容。"
+                }, {
+                    title: "服务二",
+                    content: "服务服务内容服务内容服务内容服务内容服务内容服服务服务内容服务内容服务内容服务内容服务内容服务内容服务内容内容。务内容服务内容内容。"
+                }, {
+                    title: "服务三",
+                    content: "服务服务内容服内容服务内容服务内容服务内容服务内容"
+                }, {
+                    title: "服务二",
+                    content: "服务服务内容服务内容服务内容服务内容服务内容服服务服务内容服务内容服务内容服务内容服务内容服务内容服务内容内容。务内容服务内容内容。"
+                }, {
+                    title: "服务三",
+                    content: "服务服务内容服内容服务内容服务内容服务内容服务内容"
                 }]
             };
         },
@@ -168,10 +219,10 @@
 
 <style>
     .content {
-        width: 90%;
+        width: 80%;
         margin: 0 auto;
         margin-top: 40px;
-        text-align: center;
+        /* text-align: center; */
         z-index: 1;
     }
     
@@ -187,7 +238,7 @@
     }
     
     .bg-weather {
-        background: white;
+        background-color: rgba(255, 255, 255, 0.8);
         height: 160px;
         z-index: 1;
         position: relative;
@@ -196,10 +247,8 @@
     
     
     .bg-jzfw {
-        background: white;
+        background-color: rgba(255, 255, 255, 0.8);
         height: 600px;
-        z-index: 1;
-        position: relative;
         overflow: hidden;
     }
     
@@ -214,27 +263,28 @@
     
     .bg-zczs {
         height: 420px;
-        background: white;
+        background-color: rgba(255, 255, 255, 0.8);
+        overflow: hidden;
     }
     
     .bg-oldman {
-        background: white;
+        background-color: rgba(255, 255, 255, 0.8);
         height: 160px;
         padding: 0;
     }
     
     .bg-volunteer {
-        background: white;
+        background-color: rgba(255, 255, 255, 0.8);
         height: 160px;
     }
     
     .bg-activities {
-        background: white;
+        /* background: #fff; */
         height: 240px;
         z-index: 1;
         position: relative;
         overflow: hidden;
-        /* background-color: rgba(255, 255, 255, 0.8); */
+        background-color: rgba(255, 255, 255, 0.8);
     }
     
     .bg-right-info {
@@ -242,17 +292,32 @@
     }
     
     .bg-person-center {
-        background: white;
+        background-color: rgba(255, 255, 255, 0.8);
         height: 160px;
+        text-align: center;
+    }
+
+    .bg-person-center .headImg{
+        border: 6px solid rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin: 4px;     
+    }
+
+    .bg-person-center .userId{
+        font-size: 14px;
+        display: block;
+        color: #5A5E66;
     }
     
     .bg-tongzhi {
-        background: white;
+        background-color: rgba(255, 255, 255, 0.8);
         height: 240px;
     }
     
     .bg-about {
-        background: white;
+        background-color: rgba(255, 255, 255, 0.8);
         height: 160px;
     }
     
@@ -283,34 +348,35 @@
         border-radius: 5px;
     }
     
-    .activitiesTitle {
-        width: 90%;
-        margin-bottom: 8px;
+    .boxTitle {
+        width: 100%;
+        height: 50px;
+        background-color: rgba(255, 255, 255, 0.4);
     }
     
-    .activitiesTitle h3 {
-        display: block;
-        position: absolute;
-        top: 15px;
-        left: 20px;
-        font-weight: bond;
-        /* color: #FFFFFF; */
+    .boxTitle h3 {
+        margin-left: 20px;
+        line-height: 50px;
+        color: #2D2F33;
+        font-size: 20px;
     }
     
     .activitesContent {
         box-sizing: border-box;
-        width: 99%;
-        height: 200px;
-        padding: 10px;
-        overflow: hidden;
+        width: 100%;
+        padding: 0 18px;
     }
     
-    .activitesList span {
-        /* color: #FFFFFF; */
-    }
     
     .activitesList {
-        border-bottom: 1px dashed #ccc;
+        list-style-type: none;
+        margin: 8px 0;
+        background-color: rgba(255, 255, 255, 0.6);
+        padding: 6px;
+        overflow: hidden;
+    }
+    .activitesList:hover {
+        border-left: 6px solid #EB9E05;
     }
     
     .activites-article-title {
@@ -318,11 +384,12 @@
         width: 100%;
         text-align: left;
         text-indent: 10px;
-        /* color: #FFFFFF; */
+        color: #5A5E66;
+        font-size: 16px;
     }
     
     .activites-article-title:hover {
-        color: red;
+        color: #B4BCCC;
         cursor: pointer;
     }
     
@@ -332,13 +399,23 @@
         padding: 5px;
         word-wrap: break-word;
         text-align: left;
-        text-indent: 20px;
-        /* color: #FFFFFF; */
+        text-indent: 1em;
+        color: #878D99;
+        font-size: 14px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; 
     }
     
-    .activites-article-content:hover {
-        color: #c90;
-        text-decoration: underline;
+    .moreInfo{
+        float: right;
+        font-size: 12px;
+        margin: 4px;
+    }
+    .moreInfoFirm{
+        float: left;
+        font-size: 12px;
+        margin: 4px 12px;
     }
 
     .blurBox{

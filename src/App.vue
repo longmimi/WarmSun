@@ -34,7 +34,7 @@ export default {
 <style>
   /* 页面整体布局，固定header background，footer三部分 >>>>>>>>>>>>>>>>*/
   *{
-      font-family: Hiragino Sans GB;
+      /* font-family: Hiragino Sans GB; */
       margin: 0px;
       padding: 0px;
   }
@@ -45,7 +45,7 @@ export default {
   }
   .background{
     flex: 1 0 auto;
-    background: url(./assets/bg.jpg)no-repeat center center fixed;
+    background: url(./assets/bg2.jpg)no-repeat center center fixed;
     background-size:100% 100%;
   }
 
