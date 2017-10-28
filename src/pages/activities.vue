@@ -1,5 +1,5 @@
 <template>
-  <div id="about">
+  <div id="activities">
     <div class="content">       
        <el-card class="box-card">
         <div class="activitiesBox item" v-for="(item,index) in activitiesList">
@@ -15,12 +15,15 @@
 <script>
 
 export default {
-  name: 'about',
+  name: 'activities',
   data () {
     return {
       activitiesList: [{
         title: "活动一",
         content: "重视老年人的心理健康问题心理健康问题重视重视老年人的心理健康问题心理健康问题重视老年人的心理健康问题心理健康问题心理健康问题。心理健重视老年人的心理健康问题心理健康问题重视老年人的心理健康问题心理健康问题心理健康问题。心理健老年人的心理健康问题心理健康问题心理健康问题。心理健康问题。"
+      }, {
+        title: "活动一",
+        content: "重视老年人的心理健康问题重视老年人的心理健康问题心理健康问题重视老年人的心理健康问题心理健康问题心理健康问题。心理健重视老年人的心理健康问题心理健康问题重视老年人的心理健康问题心理健康问题心理健康问题。心理健重视老年人的心理健康问题心理健康问题重视老年人的心理健康问题心理健康问题心理健康问题。心理健心理健康问题重视老年人的心理健康问题心理健康问题心理。"
       }, {
         title: "活动一",
         content: "重视老年人的心理健康问题重视老年人的心理健康问题心理健康问题重视老年人的心理健康问题心理健康问题心理健康问题。心理健重视老年人的心理健康问题心理健康问题重视老年人的心理健康问题心理健康问题心理健康问题。心理健重视老年人的心理健康问题心理健康问题重视老年人的心理健康问题心理健康问题心理健康问题。心理健心理健康问题重视老年人的心理健康问题心理健康问题心理。"
@@ -42,8 +45,7 @@ export default {
     margin: 2% auto;
   }
   .text {
-    font-size: 15px;
-    text-indent: 2em;
+    font-size: 16px;
     line-height: 22px;
     color: #B4BCCC;
   }
@@ -69,6 +71,7 @@ export default {
   }
   .activitiesInfo{
     transition: color 0.3s ease;
+    text-indent: 2em;
   }
   .activitiesInfo:hover{
     color: #878D99;

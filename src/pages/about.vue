@@ -1,122 +1,88 @@
 <template>
-  <div id="home">
-    <div class="content">
-      <el-row :gutter="16">
-        <el-col :xs="24" :sm="16" :md="8" :lg="8"><div class="grid-content bg-purple">
-          <div class="block">
-            <el-carousel height="150px">
-              <el-carousel-item v-for="item in 3" :key="item">
-                <h3>政策{{ item }}</h3>
-              </el-carousel-item>
-            </el-carousel>
+  <div id="about">
+    <div class="content">       
+       <el-card class="box-card">
+        <div class="aboutBox item">
+          <h1 class="aboutHeader">关于</h1>
+          <div class="aboutInfo text item">
+            <h3>小标题</h3>
+            <p>关于内容</p>
+            <p>关于内容关于内容关于内容</p>
+            <p>关于内容关于内容</p>
+            <p>关于内容关于内容关于内容关关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容于内容关于内容</p>
+            <h3>小标题</h3>
+            <p>关于内容关于内容关于内容关于内容</p>
+            <p>关于内容关于内容关于内容关于内容关于内容</p>
+            <p>关于内关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容容</p>
+            <p>关于内容关于内关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容容关于内容</p>
+            <h3>小标题</h3>
+            <p>关于内容关于内容</p>
+            <p>关于内容关于内容关于内容关于内容关于内容</p>
+            <p>关于内容关于内容关于内容关于内容</p>
+            <p>关于内容关于内容关于内容关于内容关于内容</p>
+            <p>关于内容关于内关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容关于内容容关于内容</p>
           </div>
-          </div>
-        </el-col>
-        <el-col :xs="12" :sm="8" :md="4" :lg="4">
-          <div class="grid-content bg-purple-dark">
-            <h3>志愿服务简介</h3>
-          </div>
-        </el-col>
-        <el-col :xs="12" :sm="8" :md="4" :lg="4"><div class="grid-content bg-purple"></div></el-col>
-        <el-col :xs="12" :sm="8" :md="4" :lg="4"><div class="grid-content bg-purple-dark"></div></el-col>
-        <el-col :xs="12" :sm="8" :md="4" :lg="4">
-          <div class="grid-content bg-purple">
-            <h3>天气</h3>
-          </div>
-        </el-col>
-        <el-col :xs="12" :sm="8" :md="4" :lg="4">
-          <div class="grid-content bg-purple-dark">
-            <h3>家政服务简介</h3>
-          </div>
-        </el-col>
-        <el-col :xs="12" :sm="8" :md="4" :lg="4"><div class="grid-content bg-purple"></div></el-col>
-        <!-- 活动>>>>>>>>>>>>>>>>>>>>>>>> -->
-        <el-col :xs="24" :sm="16" :md="8" :lg="8">
-          <div class="grid-content bg-purple-dark">
-            <div class="block">
-              <el-carousel height="150px">
-                <el-carousel-item v-for="(item,index) in activitisList" class="bgActivities">
-                  <div class="activitis">
-                    <h3>{{ item.tittle }}</h3>
-                    <p>{{ item.content }} </p>
-                  </div>
-                </el-carousel-item>
-              </el-carousel>
-            </div>
-          </div>
-        </el-col>
-        <!-- <<<<<<<<<<<<<<<<<<<<<<<<<<<<<活动 -->
-        <el-col :xs="12" :sm="8" :md="4" :lg="4">
-          <div class="grid-content bg-purple">
-            <h3>关于暖夕阳</h3>
-          </div>
-        </el-col>
-        <el-col :xs="12" :sm="8" :md="4" :lg="4"><div class="grid-content bg-purple-dark"></div></el-col>
-      </el-row>
+        </div><!-- activitiesBox_end -->
+      </el-card>
     </div>
   </div>
 </template>
+
 <script>
+
 export default {
-  name: 'home',
+  name: 'about',
   data () {
     return {
-      activitisList: [{
-        tittle: "活动一",
-        content: "活动一的内容啦啦啦啦啦。"
-      }, {
-        tittle: "活动二",
-        content: "活动二哈哈哈哈哈哈哈哈。"
-      }],
+
     };
   },
   methods: {
     
   },
   components:{
+
   }
 }
 </script>
+
 <style>
   .content{
     width: 80%;
-    margin: 6% auto;
+    margin: 2% auto;
   }
-  .el-col {
-    margin: 8px 0;
+  .text {
+    font-size: 16px;
+    line-height: 22px;
+    color: #B4BCCC;
   }
-  .bg-purple {
-    background: #d3dce6;
+  .aboutInfo p{
+    text-indent: 2em;
   }
-  .bg-purple-dark {
-    background: #99a9bf;
+  .aboutInfo h3{
+    color: #ff7761;
   }
-  .bg-purple-light {
-    background: #e5e9f2;
+  .item {
+    padding: 18px 0;
   }
-  .grid-content {
-    border-radius: 0px;
-    min-height: 150px;
+  .aboutBox{
+    width: 80%;
+    margin: 0 auto;
+  }
+  .aboutHeader{
     text-align: center;
+    width: 60%;
+    border-bottom: 2px solid #ff7761;
+    margin: 0 auto;
+    padding-bottom: 6px;
+    color: #ff7761;
+    transition: width 0.3s ease;
   }
-  .grid-content h3{
-    /* line-height: 150px; */
-    color: #475669;
-    font-size: 14px;
-    opacity: 0.75;
+  .aboutHeader:hover{
+    width: 80%;
   }
-  .el-carousel__item:nth-child(2n) {
-     background-color: #99a9bf;
+  .aboutInfo{
+    color: #878D99;
   }
-  
-  .el-carousel__item:nth-child(2n+1) {
-     background-color: #d3dce6;
-  }
-  .grid-content:hover{
-    cursor: pointer;
-    opacity: .6;
-  }
-  .bgActivities{
-    background: url('../assets/hk2.jpg')
-  }
+
 </style>

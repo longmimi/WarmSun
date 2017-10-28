@@ -162,13 +162,15 @@
                 </el-row><!-- person-center_end --> 
                 <el-row><!-- tongzhi -->
                   <el-col :lg="24" :md="24" :sm="24" :xs="24">
-                    <div class="grid-content bg-tongzhi">tongzhi                                
+                    <div class="grid-content bg-tongzhi icon-center">
+                        <i class="el-icon-bell icon-size-big"></i>                       
                     </div>
                   </el-col>
                 </el-row><!-- tongzhi_end -->
                 <el-row><!-- about -->
                   <el-col :lg="24" :md="24" :sm="24" :xs="24">
-                    <div class="grid-content bg-about">  about                              
+                    <div class="grid-content bg-about icon-center"> 
+                        <i class="el-icon-info icon-size-big"></i>                            
                     </div>
                   </el-col>
                 </el-row><!-- about_end -->
@@ -539,7 +541,18 @@ import axios from 'axios'
       filter: blur(30px);
       z-index: -1;
     }
-
-
+    .icon-size-big{
+        font-size: 60px;
+        color: #878D99;
+        transition: color 0.3s ease;
+    }
+    .icon-size-big:hover{
+        color: #5A5E66;
+    }
+    .icon-center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
 </style>
