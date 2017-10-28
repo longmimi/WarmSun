@@ -34,7 +34,7 @@ export default {
 <style>
   /* 页面整体布局，固定header background，footer三部分 >>>>>>>>>>>>>>>>*/
   *{
-      /* font-family: Hiragino Sans GB; */
+      font-family: 微软雅黑;
       margin: 0px;
       padding: 0px;
   }

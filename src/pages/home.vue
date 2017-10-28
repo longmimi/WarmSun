@@ -187,13 +187,14 @@ import axios from 'axios'
         data() {
             return {
                 userId: "王小五",
+                // 天气相关>>>>>>>>
                 cnty: "中国",
                 admin_area: "陕西",
                 location: "西安",
                 loc_time: "null",
                 tmp_max0: null,tmp_min0: null,cond_txt_d0: null,cond_txt_n0: null,
                 tmp_max1: null,tmp_min1: null,cond_txt_d1: null,cond_txt_n1: null,
-                tmp_max2: null,tmp_min2: null,cond_txt_d2: null,cond_txt_n2: null,
+                tmp_max2: null,tmp_min2: null,cond_txt_d2: null,cond_txt_n2: null,//<<<<天气相关
                 oldmanImages: [{
                     "name": "oldman1",
                     "src": require("../assets/oldman/oldman1.jpg")
@@ -265,6 +266,7 @@ import axios from 'axios'
             // if (navigator.geolocation)
             // {
             // }
+            // 调用和风天气>>>>>>>>>>
             var that=this;
             axios.get("https://free-api.heweather.com/v5/forecast?city="+'西安'+"&key=76812a8c325b4245b40df89de7e6caea")
             .then(function(res){
@@ -282,7 +284,7 @@ import axios from 'axios'
                 that.tmp_min2=res.data.HeWeather5[0].daily_forecast[2].tmp.min;
                 that.cond_txt_d2=res.data.HeWeather5[0].daily_forecast[2].cond.txt_d;
                 that.cond_txt_n2=res.data.HeWeather5[0].daily_forecast[2].cond.txt_n;
-            })
+            })//<<<<<<<<<<<<<调用和风天气
         },
         components: {
 
@@ -377,7 +379,8 @@ import axios from 'axios'
         border-radius: 50%;
         width: 100px;
         height: 100px;
-        margin: 4px;     
+        margin: 4px;
+        transition: border 0.3s ease;
     }
     .bg-person-center .headImg:hover{
         border: 8px solid rgba(255, 255, 255, 0.6);
@@ -386,6 +389,7 @@ import axios from 'axios'
         font-size: 14px;
         display: block;
         color: #5A5E66;
+        transition: color 0.3s ease;
     }
     .bg-person-center .userId:hover{
         color: #878D99;
@@ -455,6 +459,8 @@ import axios from 'axios'
         padding: 6px;
         overflow: hidden;
         border-radius: 5px;
+        transition: box-shadow 0.3s ease;
+        transition: border 0.3s ease;
     }
     .activitesList:hover {
         border-left: 6px solid #EB9E05;
@@ -468,6 +474,7 @@ import axios from 'axios'
         text-indent: 10px;
         color: #5A5E66;
         font-size: 16px;
+        transition: color 0.3s ease;
     }
     
     .activites-article-title:hover {
@@ -493,6 +500,7 @@ import axios from 'axios'
         float: right;
         font-size: 12px;
         margin: 4px;
+        transition: color 0.3s ease;
     }
     .moreInfo:hover{
         color:#ccc;
