@@ -9,6 +9,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "axios": "^0.17.0",
     "element-ui": "^1.4.6",
     "vue": "^2.4.4"
   },

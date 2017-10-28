@@ -13,7 +13,7 @@
 <script>
 import nxyHeader from './components/header.vue'
 import nxyFooter from './components/footer.vue'
-
+import axios from 'axios'
 export default {
   name: 'app',
   data () {
