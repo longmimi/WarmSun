@@ -465,7 +465,7 @@ import axios from 'axios'
         transition: border 0.3s ease;
     }
     .activitesList:hover {
-        border-left: 6px solid #EB9E05;
+        border-left: 6px solid #ff7761;
         box-shadow: -3px 3px 6px #CBCBCB;
     }
     

@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 // 导航栏各个模块页面
 import nxyHome from '../pages/home.vue'
 import nxyActivities from '../pages/activities.vue'
+import nxyActivitiesContent from '../pages/activitiesContent.vue'
 import nxyHousekeeping from '../pages/housekeeping.vue'
 
 import nxyOldPeople from '../pages/oldPeople.vue'
@@ -25,6 +26,11 @@ const router = new VueRouter({
             path: '/Activities',
             name: 'activities',
             component: nxyActivities
+        },
+        {
+            path: '/ActivitiesContent',
+            name: 'activitiesContent',
+            component: nxyActivitiesContent
         },
         {
             path: '/About',

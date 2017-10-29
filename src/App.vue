@@ -48,6 +48,14 @@ export default {
     background: url(./assets/bg2.jpg)no-repeat center center fixed;
     background-size:100% 100%;
   }
+  a{
+    text-decoration: none;
+    color: #878D99;
+    transition: color 0.3s ease;
+  }
+  a:hover{
+    color: #ff7761;
+  }
 
   /* <<<<<<<<<<<<<<<<<页面整体布局，固定header background，footer三部分 */
 

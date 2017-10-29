@@ -5,7 +5,7 @@
         <div class="activitiesBox item" v-for="(item,index) in activitiesList">
           <h3 class="activitiesHeader">{{item.title}}</h3>
           <div class="activitiesInfo text item">{{item.content}}</div>
-          <a href="#" class="moreInfoBtn">活动详情</a>
+          <router-link :to="{name:'activitiesContent'}" class="moreInfoBtn">活动详情</router-link>
         </div><!-- activitiesBox_end -->
       </el-card>
     </div>
@@ -47,10 +47,14 @@ export default {
   .text {
     font-size: 16px;
     line-height: 22px;
-    color: #B4BCCC;
+    color: #878D99;
   }
   .item {
     padding: 18px 0;
+  }
+  .box-card{
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    overflow: hidden;
   }
   .activitiesBox{
     width: 80%;
@@ -74,7 +78,7 @@ export default {
     text-indent: 2em;
   }
   .activitiesInfo:hover{
-    color: #878D99;
+    color: #5A5E66;
   }
   .moreInfoBtn{
     margin: 0 auto;

@@ -31,8 +31,4 @@ export default {
     padding-top: 16px;
     flex: 0 0 auto;
   }
-  a{
-    text-decoration: none;
-    color: #B5B5B5;
-  }
 </style>
