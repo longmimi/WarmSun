@@ -384,7 +384,7 @@
     .activitesContent {
         box-sizing: border-box;
         width: 100%;
-        padding: 0 18px;
+        padding: 0 12px;
     }
     
     
