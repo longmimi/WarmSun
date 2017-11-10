@@ -24,15 +24,43 @@
           <el-col :lg="14" :md="14" :sm="24" :xs="24"><!-- 中间 -->
             <div class="grid-content bg-purple">
 
-              <el-row>
+              <el-row><!-- 天气预报 -->
                 <el-col :lg="24" :md="24" :sm="24" :xs="24">
                   <div class="grid-content bg-weather ">
-                    天气预报
+                    <div class="weatherContent">
+                        <div id="locationWeatherInfo" class="weaterInfo">
+                            <div id="cnty">{{cnty}}</div>
+                            <div id="admin_area">{{admin_area}}</div>
+                            <div id="location">{{location}}</div>
+                            <div id="loc">更新时间{{loc_time}}</div>
+                        </div>
+                        <div id="tommorow" class="weaterInfo">
+                            <p>明天</p>
+                            <div id="tmp_max">最高温度:{{tmp_max0}}℃</div>
+                            <div id="tmp_max">最低温度:{{tmp_min0}}℃</div>
+                            <div id="cond_txt_d">白天:{{cond_txt_d0}}</div>
+                            <div id="cond_txt_n">夜晚:{{cond_txt_n0}}</div>
+                        </div>
+                        <div id="afterTommorow" class="weaterInfo">
+                            <p>后天</p>
+                            <div id="tmp_max">最高温度:{{tmp_max1}}℃</div>
+                            <div id="tmp_max">最低温度:{{tmp_min1}}℃</div>
+                            <div id="cond_txt_d">白天:{{cond_txt_d1}}</div>
+                            <div id="cond_txt_n">夜晚:{{cond_txt_n1}}</div>
+                        </div>
+                        <div id="twoDaysAfterTommorow" class="weaterInfo">
+                            <p>大后天</p>
+                            <div id="tmp_max">最高温度:{{tmp_max2}}℃</div>
+                            <div id="tmp_max">最低温度:{{tmp_min2}}℃</div>
+                            <div id="cond_txt_d">白天:{{cond_txt_d2}}</div>
+                            <div id="cond_txt_n">夜晚:{{cond_txt_n2}}</div>
+                        </div>
+                    </div>
                     <!-- <div class="blurBox"></div> -->
                   </div>
                 </el-col>
               
-              </el-row>
+              </el-row><!-- 天气预报end -->
 
               <el-row>
                 <el-col :lg="24" :md="24" :sm="24" :xs="24">
@@ -71,7 +99,7 @@
                                     </div>
                                   </el-col>
                                 </el-row>
-                                <el-row ><!-- 活动空间 -->
+                                <el-row><!-- 活动空间 -->
                                   <el-col :lg="23" :md="23":sm="24" :xs="24">
                                     <div class="grid-content bg-activities">
                                         <nav class="grid-content boxTitle"><h3>活动空间</h3>
@@ -134,13 +162,15 @@
                 </el-row><!-- person-center_end --> 
                 <el-row><!-- tongzhi -->
                   <el-col :lg="24" :md="24" :sm="24" :xs="24">
-                    <div class="grid-content bg-tongzhi">tongzhi                                
+                    <div class="grid-content bg-tongzhi icon-center">
+                        <i class="el-icon-bell icon-size-big"></i>                       
                     </div>
                   </el-col>
                 </el-row><!-- tongzhi_end -->
                 <el-row><!-- about -->
                   <el-col :lg="24" :md="24" :sm="24" :xs="24">
-                    <div class="grid-content bg-about">  about                              
+                    <div class="grid-content bg-about icon-center"> 
+                        <i class="el-icon-info icon-size-big"></i>                            
                     </div>
                   </el-col>
                 </el-row><!-- about_end -->
@@ -153,11 +183,20 @@
 </template>
 
 <script>
+import axios from 'axios'
     export default {
         name: 'home',
         data() {
             return {
-                userId: "锅郭",
+                userId: "王小五",
+                // 天气相关>>>>>>>>
+                cnty: "中国",
+                admin_area: "陕西",
+                location: "西安",
+                loc_time: "null",
+                tmp_max0: null,tmp_min0: null,cond_txt_d0: null,cond_txt_n0: null,
+                tmp_max1: null,tmp_min1: null,cond_txt_d1: null,cond_txt_n1: null,
+                tmp_max2: null,tmp_min2: null,cond_txt_d2: null,cond_txt_n2: null,//<<<<天气相关
                 oldmanImages: [{
                     "name": "oldman1",
                     "src": require("../assets/oldman/oldman1.jpg")
@@ -223,7 +262,31 @@
             };
         },
         methods: {
-
+            
+        },
+        mounted: function(){
+            // if (navigator.geolocation)
+            // {
+            // }
+            // 调用和风天气>>>>>>>>>>
+            var that=this;
+            axios.get("https://free-api.heweather.com/v5/forecast?city="+'西安'+"&key=76812a8c325b4245b40df89de7e6caea")
+            .then(function(res){
+                console.log(res.data.HeWeather5[0]);
+                that.loc_time=res.data.HeWeather5[0].basic.update.loc;
+                that.tmp_max0=res.data.HeWeather5[0].daily_forecast[0].tmp.max;
+                that.tmp_min0=res.data.HeWeather5[0].daily_forecast[0].tmp.min;
+                that.cond_txt_d0=res.data.HeWeather5[0].daily_forecast[0].cond.txt_d;
+                that.cond_txt_n0=res.data.HeWeather5[0].daily_forecast[0].cond.txt_n;
+                that.tmp_max1=res.data.HeWeather5[0].daily_forecast[1].tmp.max;
+                that.tmp_min1=res.data.HeWeather5[0].daily_forecast[1].tmp.min;
+                that.cond_txt_d1=res.data.HeWeather5[0].daily_forecast[1].cond.txt_d;
+                that.cond_txt_n1=res.data.HeWeather5[0].daily_forecast[1].cond.txt_n;
+                that.tmp_max2=res.data.HeWeather5[0].daily_forecast[2].tmp.max;
+                that.tmp_min2=res.data.HeWeather5[0].daily_forecast[2].tmp.min;
+                that.cond_txt_d2=res.data.HeWeather5[0].daily_forecast[2].cond.txt_d;
+                that.cond_txt_n2=res.data.HeWeather5[0].daily_forecast[2].cond.txt_n;
+            })//<<<<<<<<<<<<<调用和风天气
         },
         components: {
 
@@ -239,7 +302,9 @@
         /* text-align: center; */
         z-index: 1;
     }
-    
+    .carousel-item{
+        border-radius: 5px;
+    }
     .el-row {
         margin-bottom: 20px;
         &:last-child {
@@ -316,7 +381,8 @@
         border-radius: 50%;
         width: 100px;
         height: 100px;
-        margin: 4px;     
+        margin: 4px;
+        transition: border 0.3s ease;
     }
     .bg-person-center .headImg:hover{
         border: 8px solid rgba(255, 255, 255, 0.6);
@@ -325,6 +391,7 @@
         font-size: 14px;
         display: block;
         color: #5A5E66;
+        transition: color 0.3s ease;
     }
     .bg-person-center .userId:hover{
         color: #878D99;
@@ -364,7 +431,6 @@
     .oldmanPic {
         width: 100%;
         /* height: 140px; */
-        border-radius: 5px;
         cursor:pointer;
     }
     
@@ -378,7 +444,7 @@
         margin-left: 20px;
         line-height: 50px;
         color: #2D2F33;
-        font-size: 20px;
+        font-size: 16px;
     }
     
     .activitesContent {
@@ -394,9 +460,12 @@
         background-color: rgba(255, 255, 255, 0.6);
         padding: 6px;
         overflow: hidden;
+        border-radius: 5px;
+        transition: box-shadow 0.3s ease;
+        transition: border 0.3s ease;
     }
     .activitesList:hover {
-        border-left: 6px solid #EB9E05;
+        border-left: 6px solid #ff7761;
         box-shadow: -3px 3px 6px #CBCBCB;
     }
     
@@ -407,6 +476,7 @@
         text-indent: 10px;
         color: #5A5E66;
         font-size: 16px;
+        transition: color 0.3s ease;
     }
     
     .activites-article-title:hover {
@@ -432,6 +502,7 @@
         float: right;
         font-size: 12px;
         margin: 4px;
+        transition: color 0.3s ease;
     }
     .moreInfo:hover{
         color:#ccc;
@@ -441,7 +512,24 @@
         font-size: 12px;
         margin: 4px 12px;
     }
-
+    .weaterInfo{
+        float: left;
+        padding: 4px;
+        width: 20%;
+        height: 120px;
+        margin: 16px 0 0 7px;
+        text-align: center;
+        line-height: 24px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.6);
+        color: #878D99;
+        font-size: 14px;
+    }
+    .weatherContent{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .blurBox{
       position: absolute;
       width:500%;
@@ -453,7 +541,18 @@
       filter: blur(30px);
       z-index: -1;
     }
-
-
+    .icon-size-big{
+        font-size: 60px;
+        color: #878D99;
+        transition: color 0.3s ease;
+    }
+    .icon-size-big:hover{
+        color: #5A5E66;
+    }
+    .icon-center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
 </style>

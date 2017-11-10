@@ -10,3 +10,5 @@ yarn-error.log
 *.ntvs*
 *.njsproj
 *.sln
+
+！node_modules/element-ui/lib/theme-default

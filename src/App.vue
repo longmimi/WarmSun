@@ -13,7 +13,7 @@
 <script>
 import nxyHeader from './components/header.vue'
 import nxyFooter from './components/footer.vue'
-
+import axios from 'axios'
 export default {
   name: 'app',
   data () {
@@ -34,7 +34,7 @@ export default {
 <style>
   /* 页面整体布局，固定header background，footer三部分 >>>>>>>>>>>>>>>>*/
   *{
-      /* font-family: Hiragino Sans GB; */
+      font-family: 微软雅黑;
       margin: 0px;
       padding: 0px;
   }
@@ -47,6 +47,14 @@ export default {
     flex: 1 0 auto;
     background: url(./assets/bg2.jpg)no-repeat center center fixed;
     background-size:100% 100%;
+  }
+  a{
+    text-decoration: none;
+    color: #878D99;
+    transition: color 0.3s ease;
+  }
+  a:hover{
+    color: #ff7761;
   }
 
   /* <<<<<<<<<<<<<<<<<页面整体布局，固定header background，footer三部分 */
