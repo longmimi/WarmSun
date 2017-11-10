@@ -1,0 +1,118 @@
+<template>
+<div>
+  <div class="el-form-padding">
+      <el-form :model="dynamicValidateForm" ref="dynamicValidateForm" label-width="100px" class="demo-dynamic">
+        <el-form-item
+            prop="email"
+            label="邮箱"
+            :rules="[
+            { required: true, message: '请输入邮箱地址', trigger: 'blur' },
+            { type: 'email', message: '请输入正确的邮箱地址', trigger: 'blur,change' }
+            ]"
+        >
+            <el-input v-model="dynamicValidateForm.email"></el-input>
+        </el-form-item>   
+     </el-form>
+
+     <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
+        <el-form-item label="密码" prop="pass">
+            <el-input type="password" v-model="ruleForm2.pass" auto-complete="off"></el-input>
+        </el-form-item>            
+        <el-form-item class="reg-btn-group-center">
+            <el-button type="primary" @click="submitForm('ruleForm2')">登录</el-button>
+        </el-form-item>
+        <el-form-item class="reg-btn-group-center">
+           <router-link :to="{name:'register'}" tag="a">没有账号？去注册>></router-link>
+        </el-form-item>
+      </el-form>
+  </div>
+</div>
+</template>
+
+<script>
+export default {
+    name:'registerForm',
+    data () {
+      var checkAge = (rule, value, callback) => {
+        if (!value) {
+          return callback(new Error('昵称不能为空'));
+        }
+        setTimeout(() => {
+          var re = /[^\u4e00-\u9fa5]/; 
+          if (re.test(value)) {
+            callback(new Error('您的昵称必须是中文'));
+          } else {            
+              callback();         
+          }
+        }, 500);
+      };
+      var validatePass = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('请输入密码'));
+        } else {
+          if (this.ruleForm2.checkPass !== '') {
+            this.$refs.ruleForm2.validateField('checkPass');
+          }
+          callback();
+        }
+      };
+      var validatePass2 = (rule, value, callback) => {
+        if (value === '') {
+          callback(new Error('请再次输入密码'));
+        } else if (value !== this.ruleForm2.pass) {
+          callback(new Error('两次输入密码不一致!'));
+        } else {
+          callback();
+        }
+      };
+    return {
+        dynamicValidateForm: {
+          email: ''
+        },
+        ruleForm2: {
+          pass: '',
+          checkPass: '',
+          age: ''
+        },
+        rules2: {
+          pass: [
+            { validator: validatePass, trigger: 'blur' }
+          ]    
+      }
+    }
+  },
+  methods: {
+    submitForm(formName) {
+        this.$refs[formName].validate((valid) => {
+          if (valid) {
+            alert('submit!');
+          } else {
+            console.log('error submit!!');
+            return false;
+          }
+        });
+      }
+    //   removeDomain(item) {
+    //     var index = this.dynamicValidateForm.domains.indexOf(item)
+    //     if (index !== -1) {
+    //       this.dynamicValidateForm.domains.splice(index, 1)
+    //     }
+    //   }
+  }
+}
+</script>
+
+<style>
+ .el-form-padding{
+    padding:10px 50px 1px 50px;
+    position: relative;
+    right:18px;
+}
+.reg-btn-group-center{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    right:20px;
+    
+}
+</style>

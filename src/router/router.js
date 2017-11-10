@@ -12,6 +12,8 @@ import nxyPolicy from '../pages/policy.vue'
 
 import nxyAbout from '../pages/about.vue'
 import nxyVolunteer from '../pages/volunteer.vue'
+import nxyLogin from '../pages/login.vue'
+import nxyRegister from '../pages/register.vue'
 
 
 const router = new VueRouter({
@@ -56,6 +58,16 @@ const router = new VueRouter({
             path: '/Volunteer',
             name: 'volunteer',
             component: nxyVolunteer
+        },
+        {
+            path: '/Login',
+            name: 'login',
+            component: nxyLogin
+        },
+        {
+            path: '/Register',
+            name: 'register',
+            component: nxyRegister
         }
     ]
 });
