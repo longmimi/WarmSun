@@ -19,7 +19,7 @@
 <script>
 
 export default {
-  name: 'activities',
+  name: 'policy',
   data () {
     return {
       policyList: [{
