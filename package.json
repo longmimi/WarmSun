@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "axios": "^0.17.0",
-    "element-ui": "^1.4.6",
+    "element-ui": "^2.0.3",
     "vue": "^2.4.4"
   },
   "devDependencies": {
