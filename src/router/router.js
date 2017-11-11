@@ -8,7 +8,9 @@ import nxyActivitiesContent from '../pages/activitiesContent.vue'
 import nxyHousekeeping from '../pages/housekeeping.vue'
 
 import nxyOldPeople from '../pages/oldPeople.vue'
+
 import nxyPolicy from '../pages/policy.vue'
+import nxyPolicyContent from '../pages/policyContent.vue'
 
 import nxyAbout from '../pages/about.vue'
 import nxyVolunteer from '../pages/volunteer.vue'
@@ -53,6 +55,11 @@ const router = new VueRouter({
             path: '/Policy',
             name: 'policy',
             component: nxyPolicy
+        },
+        {
+            path: '/PolicyContent',
+            name: 'policyContent',
+            component: nxyPolicyContent
         },
         {
             path: '/Volunteer',
