@@ -73,7 +73,7 @@ export default {
             //利用axios post 调用接口 www.xerus.cn/nanan/public/register 
             //传入 this.$refs[formName].model.email
             
-            axios.post('www.xerus.cn/nanan/public/login',formData)
+            axios.post('http://www.xerus.cn/nanan/public/login',formData)
             .then(res=>{
               console.dir(res.data+'bbbbbbbbbbbbbbb');
               console.log(res.data.status+'cccccccccccccccc');
