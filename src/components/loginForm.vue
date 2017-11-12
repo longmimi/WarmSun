@@ -30,7 +30,7 @@
 import axios from 'axios'
 import home from '../pages/home.vue'
 export default {
-    name:'registerForm',
+    name:'loginForm',
     data () {
       var validatePass = (rule, value, callback) => {
         var re = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/; 
@@ -49,10 +49,10 @@ export default {
     return {
         ruleForm2: {
           email: '',
-          pass: ''
+          checkPass: ''
         },
         rules2: {
-          pass: [
+          checkPass: [
             { validator: validatePass, trigger: 'blur' }
           ]    
       }
@@ -60,11 +60,12 @@ export default {
   },
   methods: {
      submitForm(formName) {
-        let user=this.$refs[formName].model;
+        let user=this.$refs[formName].model; 
+        console.log('idienginwongiowiog');
         this.$refs[formName].validate((valid) => {
           if (valid) {
-            // console.log('验证成功，开始发送登录请求');
-            // console.dir(user+'aaaaaaaaaa');
+            console.log('验证成功，开始发送登录请求');
+            console.dir(user+'aaaaaaaaaa');
             let formData={
               email:user.email,
               password:user.password
@@ -72,13 +73,13 @@ export default {
             //利用axios post 调用接口 www.xerus.cn/nanan/public/register 
             //传入 this.$refs[formName].model.email
             
-            axios.post('www.xerus.cn/nanan/public/login',formData)
+            axios.post('http://www.xerus.cn/nanan/public/login',formData)
             .then(res=>{
-            //   console.dir(res.data+'bbbbbbbbbbbbbbb');
-            //   console.log(res.data.status+'cccccccccccccccc');
+              console.dir(res.data+'bbbbbbbbbbbbbbb');
+              console.log(res.data.status+'cccccccccccccccc');
               
-              if(res.status==0){
-                //   console.log('nnnnnnnnnnnnnnn');
+              if(res.data.status==1){
+                  console.log('nnnnnnnnnnnnnnn');
               //请求成功,通知登录成功,然后跳转到主页
                   const h = this.$createElement;
                   this.$notify({
@@ -89,7 +90,7 @@ export default {
               } 
             })
             .catch(error=>{
-            //    console.log(error);
+               console.log(error);
             });          
           } else {
             alert('登录失败')
