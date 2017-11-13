@@ -1,6 +1,6 @@
 <template>
   <div id="activitiesContent">
-    <div class="content">       
+    <div class="content">
        <el-card class="box-card">
         <div class="activitiesContentBox item">
           <h1 class="activitiesContentHeader">{{activitiesTitle}}</h1>
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-
+import axios from 'axios'
 export default {
   name: 'activitiesContent',
   data () {
@@ -66,7 +66,16 @@ export default {
     };
   },
   methods: {
-    
+
+  },
+  mounted: function(){
+    axios.post('http://www.xerus.cn/nanan/public/activity',)
+    .then(res=>{
+      console.log(res.data.msg+'===>res.data.msg');
+      // if(res.data.status===0){
+      //     this.activitiesList=res.data.data;
+      // }
+    })
   },
   components:{
 

@@ -1,9 +1,9 @@
 <template>
   <div id="policyText">
-    <div class="policyItem">       
-      <h2>{{policyMsg.policyTitle}}</h2>
-      <p>{{policyMsg.policyText}}</p>
-      <div class="policyTime">{{policyMsg.policyTime}}</div>
+    <div class="policyItem" v-if="policyMsg">
+      <h2>{{policyMsg.title}}</h2>
+      <p>{{policyMsg.content}}</p>
+      <div class="policyTime">{{policyMsg.created_at}}</div>
     </div>
   </div>
 </template>
@@ -14,14 +14,14 @@ export default {
   name: 'policyText',
   data () {
     return {
-      
+
     };
   },
   props: [
     "policyMsg"
   ],
   methods: {
-    
+
   },
   components:{
 
@@ -31,7 +31,7 @@ export default {
 
 <style>
 .policyItem{
-  
+
 }
 .policyItem p{
   text-indent: 2em;
