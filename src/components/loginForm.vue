@@ -11,10 +11,10 @@
             ]"
         >
             <el-input v-model="ruleForm2.email"></el-input>
-        </el-form-item> 
+        </el-form-item>
         <el-form-item label="密码" prop="pass">
             <el-input type="password" v-model="ruleForm2.pass" auto-complete="off"></el-input>
-        </el-form-item>            
+        </el-form-item>
         <el-form-item class="reg-btn-group-center">
             <el-button type="primary" @click="submitForm('ruleForm2')">登录</el-button>
         </el-form-item>
@@ -33,10 +33,10 @@ export default {
     name:'loginForm',
     data () {
       var validatePass = (rule, value, callback) => {
-        var re = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/; 
+        var re = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/;
           if (!re.test(value)) {
             callback(new Error('请输入8-16位字母数字组合的密码'));
-          } 
+          }
         else if (value === '') {
           callback(new Error('请输入密码'));
         } else {
@@ -49,18 +49,18 @@ export default {
     return {
         ruleForm2: {
           email: '',
-          checkPass: ''
+          pass: ''
         },
         rules2: {
           checkPass: [
             { validator: validatePass, trigger: 'blur' }
-          ]    
+          ]
       }
     }
   },
   methods: {
      submitForm(formName) {
-        let user=this.$refs[formName].model; 
+        let user=this.$refs[formName].model;
         console.log('idienginwongiowiog');
         this.$refs[formName].validate((valid) => {
           if (valid) {
@@ -68,17 +68,17 @@ export default {
             console.dir(user+'aaaaaaaaaa');
             let formData={
               email:user.email,
-              password:user.password
+              password:user.pass
             } ;
-            //利用axios post 调用接口 www.xerus.cn/nanan/public/register 
+            //利用axios post 调用接口 www.xerus.cn/nanan/public/register
             //传入 this.$refs[formName].model.email
-            
+
             axios.post('http://www.xerus.cn/nanan/public/login',formData)
             .then(res=>{
               console.dir(res.data+'bbbbbbbbbbbbbbb');
               console.log(res.data.status+'cccccccccccccccc');
-              
-              if(res.data.status==1){
+
+              if(res.data.status==0){
                   console.log('nnnnnnnnnnnnnnn');
               //请求成功,通知登录成功,然后跳转到主页
                   const h = this.$createElement;
@@ -87,11 +87,11 @@ export default {
                     message: h('i', { style: 'color: teal'}, '欢迎来到一个新的养老天地')
                   });
                   this.$router.push('/');
-              } 
+              }
             })
             .catch(error=>{
                console.log(error);
-            });          
+            });
           } else {
             alert('登录失败')
             return false;
@@ -112,12 +112,12 @@ export default {
     display: flex;
     justify-content: center;
     position: relative;
-    right:20px;  
+    right:20px;
 }
 .log_container{
    margin:0 auto;
     width:60%;
-    margin-top:5%;  
+    margin-top:5%;
   }
 .logForm{
     background: #fff;
@@ -130,5 +130,5 @@ export default {
 .reg-header span{
     font-family: Helvetica Neue;
     font-size:20px;
-} 
+}
 </style>

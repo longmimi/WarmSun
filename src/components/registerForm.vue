@@ -11,7 +11,7 @@
             ]"
         >
             <el-input v-model="ruleForm2.email"></el-input>
-        </el-form-item>   
+        </el-form-item>
         <el-form-item label="密码" prop="pass">
             <el-input type="password" v-model="ruleForm2.pass" auto-complete="off"></el-input>
         </el-form-item>
@@ -44,19 +44,19 @@ export default {
           return callback(new Error('昵称不能为空'));
         }
         setTimeout(() => {
-          var re = /[^\u4e00-\u9fa5]/; 
+          var re = /[^\u4e00-\u9fa5]/;
           if (re.test(value)) {
             callback(new Error('您的昵称必须是中文'));
-          } else {            
-              callback();         
+          } else {
+              callback();
           }
         }, 500);
       };
       var validatePass = (rule, value, callback) => {
-        var re = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/; 
+        var re = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/;
           if (!re.test(value)) {
             callback(new Error('请输入8-16位字母数字组合的密码'));
-          } 
+          }
         else if (value === '') {
           callback(new Error('请输入密码'));
         } else {
@@ -72,7 +72,7 @@ export default {
         } else if (value !== this.ruleForm2.pass) {
           callback(new Error('两次输入密码不一致!'));
         } else {
-          callback();     
+          callback();
         }
       };
     return {
@@ -91,7 +91,7 @@ export default {
           ],
           name: [
             { validator: checkName, trigger: 'blur' }
-          ]      
+          ]
       }
     }
   },
@@ -104,16 +104,16 @@ export default {
             console.dir(user);
             let formData={
               email:user.email,
-              password:user.password,
+              password:user.pass,
               name:user.name
             } ;
-            //利用axios post 调用接口 www.xerus.cn/nanan/public/register 
+            //利用axios post 调用接口 www.xerus.cn/nanan/public/register
             //传入 this.$refs[formName].model.email
-            
+
             axios.post('http://www.xerus.cn/nanan/public/register',formData)
             .then(res=>{
               console.dir(res.data);
-              if(res.data.status==1){
+              if(res.data.status==0){
               //请求成功,通知注册成功,然后跳转到主页
                   const h = this.$createElement;
                   this.$notify({
@@ -121,11 +121,11 @@ export default {
                     message: h('i', { style: 'color: teal'}, '欢迎来到一个新的养老天地')
                   });
                   this.$router.push('/');
-              } 
+              }
             })
             .catch(error=>{
                console.log(error);
-            });          
+            });
           } else {
             alert('登录失败')
             return false;
@@ -149,6 +149,6 @@ export default {
     display: flex;
     justify-content: center;
     position: relative;
-    right:20px; 
+    right:20px;
 }
 </style>
