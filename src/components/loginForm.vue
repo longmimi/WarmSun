@@ -61,11 +61,9 @@ export default {
   methods: {
      submitForm(formName) {
         let user=this.$refs[formName].model;
-        console.log('idienginwongiowiog');
         this.$refs[formName].validate((valid) => {
           if (valid) {
             console.log('验证成功，开始发送登录请求');
-            console.dir(user+'aaaaaaaaaa');
             let formData={
               email:user.email,
               password:user.pass
@@ -75,8 +73,8 @@ export default {
 
             axios.post('http://www.xerus.cn/nanan/public/login',formData)
             .then(res=>{
-              console.dir(res.data+'bbbbbbbbbbbbbbb');
-              console.log(res.data.status+'cccccccccccccccc');
+              console.dir(res.data+'  返回的data');
+              console.log(res.data.status+' res 的 status');
 
               if(res.data.status==0){
                   console.log('nnnnnnnnnnnnnnn');
@@ -87,6 +85,10 @@ export default {
                     message: h('i', { style: 'color: teal'}, '欢迎来到一个新的养老天地')
                   });
                   this.$router.push('/');
+              }else{
+                console.log(user.pass);
+                user.pass='';
+                alert(res.data.msg);
               }
             })
             .catch(error=>{
