@@ -44,11 +44,11 @@
 
           </el-col>
         </el-row>
+        <div style="text-align:center">第{{page}}页 {{warning}}</div>
         <el-button-group>
           <el-button plain icon="el-icon-arrow-left" @click="prev()">上一页</el-button>
           <el-button plain @click="next()">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
         </el-button-group>
-        <div style="text-align:center">第{{page}}页 {{warning}}</div>
       </el-card>
     </div>
   </div>
@@ -184,7 +184,7 @@ export default {
   .el-button-group{
     display: flex;
     justify-content: center;
-    margin: 30px auto;
+    margin: 10px auto;
   }
   .policyRouter{
     color: #000;

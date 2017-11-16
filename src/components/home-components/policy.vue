@@ -1,18 +1,18 @@
 <template>
   <div class="grid-content bg-zczs">
     <nav class="grid-content boxTitle"><h3>政策展示</h3>
-    </nav> 
+    </nav>
     <ul class="grid-content activitesContent">
         <li v-for="(cont,index) in policyList" class="activitesList">
           <a class="activites-article-title">
             {{cont.title}}
-          </a>                                    
+          </a>
           <p><a class="activites-article-content" href="#">
           {{cont.content}}
           </a></p>
           <a href="#" class="moreInfo">了解更多>></a>
         </li>
-    </ul> 
+    </ul>
   </div>
 </template>
 
@@ -23,22 +23,19 @@ export default {
   data () {
     return {
       policyList: [{
-          title: "政策一",
-          content: "政策内容政策内容政策内容政策内政策内容政策内容政策政策内容政策内容政策容。"
+          title: "习近平出席亚太经合组织工商领导人峰会并发表主旨演讲",
+          content: "习近平指出，发展之路没有终点，只有新的起点。世界正面临增长动能、全球发展方式、"
       }, {
-          title: "政一",
-          content: "政策内容政策内容政策内容政策内容政策内容政策政策内容政策内容政策政策内容。"
+          title: "《老年人健康护理手册》首发",
+          content: "4月17日上午，《老年人健康护理手册》首发暨“凤凰夕阳红”微信公众号上线仪式在宁举行。"
       }, {
-          title: "政策一",
-          content: "政策内容政策内容政策内容政策内容政策政策内容政策内容政策政策内容政策内容政策政策内容政策内容。"
-      }, {
-          title: "政策",
-          content: "政策内容政策内容政策政策内容政策内容政策政策内容政策内容政策政策内容政策内容政策内容政策内容。"
+          title: "养老服务市场将全面放开",
+          content: "满足数量庞大的老年群众多方面需求、妥善解决人口老龄化带来的社会问题，事关发展全局，事关百姓福祉。"
       }]
     };
   },
   methods: {
-    
+
   },
   components:{
 
@@ -113,7 +110,7 @@ export default {
     font-size: 14px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 .moreInfo{

@@ -1,9 +1,9 @@
 <template>
   <div class="grid-content bg-person-center">
-    <a href="#">
+    <router-link :to="{ name: 'personCenter'}">
       <img src="../../assets/headImg.jpg" alt="headImg" class="headImg">
       <strong class="userId">{{userId}}</strong>
-    </a>                             
+    </router-link>
   </div>
 </template>
 
@@ -13,11 +13,11 @@ export default {
   name: 'personCenter',
   data () {
     return {
-      userId: "王小五"
+      userId: "Id"
     };
   },
   methods: {
-    
+
   },
   components:{
 

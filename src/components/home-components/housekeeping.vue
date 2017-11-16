@@ -1,19 +1,19 @@
 <template>
   <div class="grid-content bg-jzfw ">
     <nav class="grid-content boxTitle"><h3>家政服务</h3>
-    </nav> 
+    </nav>
     <ul class="grid-content activitesContent">
       <li v-for="(cont,index) in housekeepingList" class="activitesList">
         <a class="activites-article-title">
           {{cont.title}}
-        </a>                                    
+        </a>
         <p><a class="activites-article-content" href="#">
         {{cont.content}}
         </a></p>
         <a href="#" class="moreInfo">了解更多>></a>
         <a href="#" class="moreInfoFirm">XXX家政公司</a>
       </li>
-    </ul> 
+    </ul>
     <!-- <div class="blurBox"></div> -->
   </div>
 </template>
@@ -25,25 +25,25 @@ export default {
   data () {
     return {
       housekeepingList: [{
-          title: "服务一",
+          title: "室内保洁",
           content: "服务服务内容服务内容服务内容服务内容服务内容服务内容服务内容内容。"
       }, {
-          title: "服务二",
+          title: "家电维修",
           content: "服务服务内容服务内容服务内容服务内容服务内容服服务服务内容服务内容服务内容服务内容服务内容服务内容服务内容内容。务内容服务内容内容。"
       }, {
-          title: "服务三",
+          title: "室内保洁",
           content: "服务服务内容服内容服务内容服务内容服务内容服务内容"
       }, {
-          title: "服务二",
+          title: "家电维修",
           content: "服务服务内容服务内容服务内容服务内容服务内容服服务服务内容服务内容服务内容服务内容服务内容服务内容服务内容内容。务内容服务内容内容。"
       }, {
-          title: "服务三",
+          title: "室内保洁",
           content: "服务服务内容服内容服务内容服务内容服务内容服务内容"
       }]
     };
   },
   methods: {
-    
+
   },
   components:{
 
@@ -115,7 +115,7 @@ export default {
     font-size: 14px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 .moreInfo{

@@ -1,19 +1,19 @@
 <template>
   <div class="grid-content bg-activities">
     <nav class="grid-content boxTitle"><h3>活动空间</h3>
-    </nav> 
+    </nav>
     <ul class="grid-content activitesContent">
         <li v-for="(cont,index) in activitesList" class="activitesList">
           <a class="activites-article-title">
             {{cont.title}}
-          </a>                                    
+          </a>
           <p><a href="#" class="activites-article-content">
               {{cont.content}}
           </a>
           </p>
           <a href="#" class="moreInfo">了解更多>></a>
         </li>
-    </ul> 
+    </ul>
     <!-- <div class="blurBox"></div>                               -->
   </div>
 </template>
@@ -25,16 +25,16 @@ export default {
   data () {
     return {
       activitesList: [{
-        title: "活动一",
-        content: "重视老年人的心理健康问题心理健康问题重视老年人的心理健康问题心理健康问题心理健康问题。心理健康问题。"
+        title: "象棋比赛",
+        content: "暖夕阳第一届人民公园老年象棋比赛,暖夕阳第一届人民公园老年象棋比赛,暖夕阳第一届人民公园老年象棋比赛"
       }, {
-        title: "活动一",
-        content: "重视老年人的心理健康问题心理健康问题重视老年人的心理健康问题心理健康问题心理。"
+        title: "迎春植树活动",
+        content: "为了迎接春天到来，我们组织了这次迎春活动，让我们为大自然奉献绿色,为了迎接春天到来，我们组织了这次迎春活动"
       }]
     };
   },
   methods: {
-    
+
   },
   components:{
 
@@ -112,7 +112,7 @@ export default {
     font-size: 14px;
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 .moreInfo{

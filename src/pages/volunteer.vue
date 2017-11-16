@@ -1,6 +1,6 @@
 <template>
   <div id="about">
-    <div class="content">   
+    <div class="content">
           <div class="volun-welcome">
             <h1 class="volun-welcome-word">暖夕阳的志愿者</h1>
           </div>
@@ -22,7 +22,7 @@
                 <el-tag class="volun-tag-word" type="warning">标签四</el-tag>
                 <el-tag class="volun-tag-word" type="danger">标签五</el-tag>
               </div>
-              
+
             </div>
             <div class="volun-content">
                 <el-row>
@@ -30,14 +30,14 @@
                     v-for="(item, index) in volunteerList" :key="item.id">
                       <router-link :to="{name:'policy'}">
                         <el-card class="volun-card">
-                          
+
                             <img :src='item.avatar' class="image">
-                          
+
                           <div style="padding: 4px;" class="volun-box">
                             <span class="volun volun-name">{{item.name}}</span>
                             <span class="volun volun-age">{{item.brth}}</span>
                             <div class="volun volun-job">职业：{{item.job}}</div>
-                            <div class="volun volun-hobby">爱好：{{item.hobby}}</div>            
+                            <div class="volun volun-hobby">爱好：{{item.hobby}}</div>
                             <div class="bottom clearfix">
                               <!-- <time class="time">{{ currentDate }}</time> -->
                               <el-button type="text" class="button">查看详情</el-button>
@@ -54,7 +54,7 @@
                   </el-pagination>
                 </div>
             </div>
-        
+
     </div>
   </div>
 </template>
@@ -65,7 +65,7 @@ import policy from './policy.vue'
 export default {
   name: 'about',
   data () {
-    
+
     return {
        options: [{
           value: '选项1',
@@ -83,7 +83,7 @@ export default {
             id: 1,
             user_id: 1,
             role: "",
-            name: "潘海亮",
+            name: "小张",
             brth: 22,
             job: '学生',
             sex: "",
@@ -98,14 +98,14 @@ export default {
             id: 1,
             user_id: 1,
             role: "",
-            name: "潘海亮",
+            name: "小王",
             brth: null,
             job: '学生',
             sex: "",
             avatar: require('../assets/volunteer/volunteer3.jpg'),
             address: null,
             telphone: null,
-            hobby: '下棋',
+            hobby: '唱歌',
             created_at: "",
             updated_at: ""
           },
@@ -113,8 +113,38 @@ export default {
             id: 1,
             user_id: 1,
             role: "",
-            name: "潘海亮",
+            name: "小李",
             brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer2.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '钢琴',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "小赵",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer4.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '唱戏',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "小张",
+            brth: 22,
             job: '学生',
             sex: "",
             avatar: require('../assets/volunteer/volunteer2.jpg'),
@@ -128,38 +158,52 @@ export default {
             id: 1,
             user_id: 1,
             role: "",
-            name: "潘海亮",
+            name: "小王",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer3.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '唱歌',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "小李",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer2.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '钢琴',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "小赵",
             brth: null,
             job: '学生',
             sex: "",
             avatar: require('../assets/volunteer/volunteer4.jpg'),
             address: null,
             telphone: null,
-            hobby: '下棋',
+            hobby: '唱戏',
             created_at: "",
             updated_at: ""
-          },
-          {
+          },{
             id: 1,
             user_id: 1,
             role: "",
-            name: "潘海亮",
-            brth: null,
-            job: '学生',
-            sex: "",
-            avatar: require('../assets/volunteer/volunteer1.jpg'),
-            address: null,
-            telphone: null,
-            hobby: '下棋',
-            created_at: "",
-            updated_at: ""
-          },
-          {
-            id: 1,
-            user_id: 1,
-            role: "",
-            name: "潘海亮",
-            brth: null,
+            name: "小张",
+            brth: 22,
             job: '学生',
             sex: "",
             avatar: require('../assets/volunteer/volunteer2.jpg'),
@@ -173,44 +217,14 @@ export default {
             id: 1,
             user_id: 1,
             role: "",
-            name: "潘海亮",
-            brth: null,
-            job: '学生',
-            sex: "",
-            avatar: require('../assets/volunteer/volunteer4.jpg'),
-            address: null,
-            telphone: null,
-            hobby: '下棋',
-            created_at: "",
-            updated_at: ""
-          },
-          {
-            id: 1,
-            user_id: 1,
-            role: "",
-            name: "潘海亮",
-            brth: null,
-            job: '学生',
-            sex: "",
-            avatar: require('../assets/volunteer/volunteer1.jpg'),
-            address: null,
-            telphone: null,
-            hobby: '下棋',
-            created_at: "",
-            updated_at: ""
-          },
-          {
-            id: 1,
-            user_id: 1,
-            role: "",
-            name: "潘海亮",
+            name: "小王",
             brth: null,
             job: '学生',
             sex: "",
             avatar: require('../assets/volunteer/volunteer3.jpg'),
             address: null,
             telphone: null,
-            hobby: '下棋',
+            hobby: '唱歌',
             created_at: "",
             updated_at: ""
           },
@@ -218,29 +232,14 @@ export default {
             id: 1,
             user_id: 1,
             role: "",
-            name: "潘海亮",
-            brth: null,
-            job: '学生',
-            sex: "",
-            avatar: require('../assets/volunteer/volunteer4.jpg'),
-            address: null,
-            telphone: null,
-            hobby: '下棋',
-            created_at: "",
-            updated_at: ""
-          },
-          {
-            id: 1,
-            user_id: 1,
-            role: "",
-            name: "潘海亮",
+            name: "小李",
             brth: null,
             job: '学生',
             sex: "",
             avatar: require('../assets/volunteer/volunteer2.jpg'),
             address: null,
             telphone: null,
-            hobby: '下棋',
+            hobby: '钢琴',
             created_at: "",
             updated_at: ""
           },
@@ -248,14 +247,14 @@ export default {
             id: 1,
             user_id: 1,
             role: "",
-            name: "潘海亮",
+            name: "小赵",
             brth: null,
             job: '学生',
             sex: "",
-            avatar: require('../assets/volunteer/volunteer3.jpg'),
+            avatar: require('../assets/volunteer/volunteer4.jpg'),
             address: null,
             telphone: null,
-            hobby: '下棋',
+            hobby: '唱戏',
             created_at: "",
             updated_at: ""
           }
@@ -263,7 +262,7 @@ export default {
     };
   },
   methods: {
-    
+
   },
   // mounted:function(){
   //   let formData={
@@ -275,7 +274,7 @@ export default {
   //             console.log(res.data);
   //             this.volunteerList=res.data;
   //             // console.log(this.volunteerList[0].avatar+'nnnnnnnnnnnnnnnnnnnnnnnn');
-              
+
   //           })
   //           .catch(error=>{
   //              alert(res.msg);
@@ -354,8 +353,8 @@ export default {
     font-size: 13px;
     color: #999;
   }
-  
-  
+
+
   .bottom {
     margin-top: 13px;
     line-height: 12px;
@@ -368,8 +367,8 @@ export default {
 .volun-card .image {
   width:100%;
   height:100%;
-  display: block; 
-  
+  display: block;
+
 }
 
   .clearfix:before,
@@ -377,9 +376,9 @@ export default {
       display: table;
       content: "";
   }
-  
+
   .clearfix:after {
       clear: both
   }
-  
+
 </style>
