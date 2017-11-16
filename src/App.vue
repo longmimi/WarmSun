@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <meta name="viewport" content="initial-scale=1">
     <nxyHeader></nxyHeader>
 
     <div class="background"><!-- background内部显示路由的不同页面 -->
