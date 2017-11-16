@@ -26,13 +26,16 @@
             </div>
             <div class="volun-content">
                 <el-row>
-                    <el-col :span="4" v-for="(item, index) in volunteerList" :key="item.id">
+                    <el-col  :xs="12" :sm="8" :md="6" :lg="4" :xl="4"
+                    v-for="(item, index) in volunteerList" :key="item.id">
                       <router-link :to="{name:'policy'}">
                         <el-card class="volun-card">
-                          <img :src='item.src' class="image">
-                          <div style="padding: 4px;">
+                          
+                            <img :src='item.avatar' class="image">
+                          
+                          <div style="padding: 4px;" class="volun-box">
                             <span class="volun volun-name">{{item.name}}</span>
-                            <span class="volun volun-age">{{item.age}}岁</span>
+                            <span class="volun volun-age">{{item.brth}}</span>
                             <div class="volun volun-job">职业：{{item.job}}</div>
                             <div class="volun volun-hobby">爱好：{{item.hobby}}</div>            
                             <div class="bottom clearfix">
@@ -51,6 +54,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import policy from './policy.vue'
 export default {
   name: 'about',
@@ -70,107 +74,477 @@ export default {
         value5: [],
         volunteerList:[
           {
-            id:'1',
-            src:require('../assets/volunteer/volunteer1.jpg'),
-            name:'李龙廷',
-            job:'军人',
-            hobby:'打篮球',
-            age:'20'
-          },
-           {
-            id:'1',
-            src:require('../assets/volunteer/volunteer1.jpg'),
-            name:'李龙廷',
-            job:'军人',
-            hobby:'打篮球',
-            age:'20'
-          },
-          {
-            id:'1',
-            src:require('../assets/volunteer/volunteer1.jpg'),
-            name:'李龙廷',
-            job:'军人',
-            hobby:'打篮球',
-            age:'20'
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: 22,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer2.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
           },
           {
-            id:'1',
-            src:require('../assets/volunteer/volunteer1.jpg'),
-            name:'李龙廷',
-            job:'军人',
-            hobby:'打篮球',
-            age:'20'
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer3.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
           },
           {
-            id:'1',
-            src:require('../assets/volunteer/volunteer1.jpg'),
-            name:'李龙廷',
-            job:'军人',
-            hobby:'打篮球',
-            age:'20'
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer2.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
           },
           {
-            id:'1',
-            src:require('../assets/volunteer/volunteer1.jpg'),
-            name:'李龙廷',
-            job:'军人',
-            hobby:'打篮球',
-            age:'20'
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer4.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
           },
           {
-            id:'1',
-            src:require('../assets/volunteer/volunteer1.jpg'),
-            name:'李龙廷',
-            job:'军人',
-            hobby:'打篮球',
-            age:'20'
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer1.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
           },
           {
-            id:'1',
-            src:require('../assets/volunteer/volunteer1.jpg'),
-            name:'李龙廷',
-            job:'军人',
-            hobby:'打篮球',
-            age:'20'
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer2.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
           },
           {
-            id:'1',
-            src:require('../assets/volunteer/volunteer1.jpg'),
-            name:'李龙廷',
-            job:'军人',
-            hobby:'打篮球',
-            age:'20'
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer4.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
           },
           {
-            id:'1',
-            src:require('../assets/volunteer/volunteer1.jpg'),
-            name:'李龙廷',
-            job:'军人',
-            hobby:'打篮球',
-            age:'20'
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer1.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
           },
           {
-            id:'1',
-            src:require('../assets/volunteer/volunteer1.jpg'),
-            name:'李龙廷',
-            job:'军人',
-            hobby:'打篮球',
-            age:'20'
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer3.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
           },
           {
-            id:'1',
-            src:require('../assets/volunteer/volunteer1.jpg'),
-            name:'李龙廷',
-            job:'军人',
-            hobby:'打篮球',
-            age:'20'
-          }
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer4.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer2.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer3.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer3.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer1.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          } ,
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer2.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer1.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer3.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer2.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer4.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer4.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer1.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer2.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer4.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer3.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer2.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer1.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer4.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer3.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer1.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          },
+          {
+            id: 1,
+            user_id: 1,
+            role: "",
+            name: "潘海亮",
+            brth: null,
+            job: '学生',
+            sex: "",
+            avatar: require('../assets/volunteer/volunteer2.jpg'),
+            address: null,
+            telphone: null,
+            hobby: '下棋',
+            created_at: "",
+            updated_at: ""
+          }       
       ]
     };
   },
   methods: {
     
   },
+  // mounted:function(){
+  //   let formData={
+
+  //   };
+  //    axios.post('http://www.xerus.cn/nanan/public/volunteers',formData)
+  //           .then(res=>{
+  //             console.dir(res.data);
+  //             console.log(res.data);
+  //             this.volunteerList=res.data;
+  //             // console.log(this.volunteerList[0].avatar+'nnnnnnnnnnnnnnnnnnnnnnnn');
+              
+  //           })
+  //           .catch(error=>{
+  //              alert(res.msg);
+  //           });
+  // },
   components:{
     policy
   }
@@ -218,10 +592,11 @@ export default {
     user-select: none;
   }
   .volun-card{
-    /* width:100%;
-    height:100%; */
+    /* width:88%;
+    height:88%; */
     padding:2px;
     margin:2px 10px 3px 0;
+    display:block;
   }
   .volun-age{
     float:right;
@@ -234,6 +609,7 @@ export default {
     color: #999;
   }
   
+  
   .bottom {
     margin-top: 13px;
     line-height: 12px;
@@ -243,11 +619,12 @@ export default {
     padding: 0;
     float: right;
   }
-
-  .image {
-    width: 100%;
-    display: block;
-  }
+.volun-card .image {
+  width:100%;
+  height:100%;
+  display: block; 
+  
+}
 
   .clearfix:before,
   .clearfix:after {

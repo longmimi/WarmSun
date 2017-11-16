@@ -43,19 +43,21 @@ export default {
         if (!value) {
           return callback(new Error('昵称不能为空'));
         }
-        setTimeout(() => {
-          var re = /[^\u4e00-\u9fa5]/;
-          if (re.test(value)) {
-            callback(new Error('您的昵称必须是中文'));
-          } else {
-              callback();
-          }
-        }, 500);
+        // setTimeout(() => {
+        //   var re = /[^\u4e00-\u9fa5]/;
+        //   if (re.test(value)) {
+        //     callback(new Error('您的昵称必须是中文'));
+        //   } else {
+        //       callback();
+        //   }
+        // }, 500);
+        callback();
       };
       var validatePass = (rule, value, callback) => {
-        var re = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/;
+        // var re = /^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{8,16}$/;
+        var re = /^[0-9A-Za-z]{8,16}$/;
           if (!re.test(value)) {
-            callback(new Error('请输入8-16位字母数字组合的密码'));
+            callback(new Error('请输入8-16位字母或数字的密码'));
           }
         else if (value === '') {
           callback(new Error('请输入密码'));
@@ -101,7 +103,7 @@ export default {
         this.$refs[formName].validate((valid) => {
           if (valid) {
             console.log('验证成功，开始发送注册请求');
-            console.dir(user);
+            // console.dir(user);
             let formData={
               email:user.email,
               password:user.pass,
@@ -113,6 +115,7 @@ export default {
             axios.post('http://www.xerus.cn/nanan/public/register',formData)
             .then(res=>{
               console.dir(res.data);
+              console.log(res.data);
               if(res.data.status==0){
               //请求成功,通知注册成功,然后跳转到主页
                   const h = this.$createElement;
@@ -124,10 +127,10 @@ export default {
               }
             })
             .catch(error=>{
-               console.log(error);
+               alert(res.msg);
             });
           } else {
-            alert('登录失败')
+            alert('注册失败')
             return false;
           }
         });
