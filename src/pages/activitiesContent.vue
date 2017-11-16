@@ -28,10 +28,10 @@ export default {
   name: 'activitiesContent',
   data () {
     return {
-      activitiesTitle:"活动名称",
+      activitiesTitle:"暖夕阳杯象棋比赛",
       activitiesReleaseTime:"2017/10/10",
-      activitiesHoldTime:"2017/10/10",
-      activitiesInfo:"活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍活动介绍",
+      activitiesHoldTime:"2017/10/20",
+      activitiesInfo:"暖夕阳杯第一届人民公园老年象棋比赛。为了弘扬国粹，以棋会友，加强老人们的联系和往来，同时提供给象棋爱好者一个发挥自己特长，展示自己棋艺的平台，举办了本次比赛。通过比赛，期望能够加强象棋爱好者之间的交流，增进友谊，使大家培养优良的棋风，进一步提高棋艺，共同进步。活动时间是5月25日上午9点，地点人民公园，比赛决出冠亚季军会获得暖夕阳平台提供的证书和奖品，希望广大棋友积极报名参加！！！详情咨询电话：15529419335",
       membersList:[{
         name:"wang",
         headImg:"src/assets/headImg.jpg"

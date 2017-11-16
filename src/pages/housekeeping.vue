@@ -1,6 +1,6 @@
 <template>
   <div id="about">
-    <div class="content">       
+    <div class="content">
       <el-card class="box-card">
         <div class="toc">
           <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose" :collapse="isCollapse">
@@ -32,17 +32,17 @@
             </el-menu-item>
           </el-menu>
         </div>
-        
+
 
         <!-- housekeepingCard -->
         <div class="housekeepingContent">
-          <el-col :span="8" v-for="(o, index) in 2" :key="o" :offset="index > 0 ? 1 : 0">
+          <el-col :span="8" v-for="(item, index) in serviceList" :key="item.id" :offset="index > 0 ? 1 : 0">
             <el-card :body-style="{ padding: '0px' }" class="housekeepingCard">
               <img src="../assets/bg1.jpg" class="image">
               <div style="padding: 14px;">
-                <span>家政服务</span>
+                <span>{{item.serviceName}}</span>
                 <div class="bottom clearfix">
-                  <time class="fee">{{ fee }}</time>
+                  <time class="fee">{{ item.fee }}</time>
                   <el-button type="text" class="button">服务详情</el-button>
                 </div>
               </div>
@@ -61,7 +61,15 @@ export default {
   name: 'about',
   data () {
     return {
-      fee:"unKnown",
+      serviceList:[{
+        id:1,
+        fee:"￥100",
+        serviceName:"室内保洁"
+      },{
+        id:2,
+        fee:"不定",
+        serviceName:"家电维修"
+      }],
       isCollapse: true
     };
   },
@@ -105,7 +113,7 @@ export default {
     font-size: 13px;
     color: #999;
   }
-  
+
   .bottom {
     margin-top: 13px;
     line-height: 12px;
@@ -126,7 +134,7 @@ export default {
       display: table;
       content: "";
   }
-  
+
   .clearfix:after {
       clear: both
   }
