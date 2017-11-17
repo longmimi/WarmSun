@@ -16,6 +16,7 @@ import nxyAbout from '../pages/about.vue'
 import nxyVolunteer from '../pages/volunteer.vue'
 import nxyLogin from '../pages/login.vue'
 import nxyRegister from '../pages/register.vue'
+import nxyPersonCenter from '../pages/personCenter.vue'
 
 
 const router = new VueRouter({
@@ -75,6 +76,11 @@ const router = new VueRouter({
             path: '/Register',
             name: 'register',
             component: nxyRegister
+        },
+        {
+            path: '/PersonCenter',
+            name: 'personCenter',
+            component: nxyPersonCenter
         }
     ]
 });
