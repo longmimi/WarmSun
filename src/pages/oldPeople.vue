@@ -25,7 +25,7 @@
               
             </div>
             <div class="volun-content">
-                <el-row>
+                <!-- <el-row>
                     <el-col  :xs="12" :sm="8" :md="6" :lg="4" :xl="4"
                     v-for="(item, index) in volunteerList" :key="item.id">
                       <router-link :to="{name:'policy'}">
@@ -39,22 +39,134 @@
                             <div class="volun volun-job">职业：{{item.job}}</div>
                             <div class="volun volun-hobby">爱好：{{item.hobby}}</div>            
                             <div class="bottom clearfix">
-                              <!-- <time class="time">{{ currentDate }}</time> -->
                               <el-button type="text" class="button">查看详情</el-button>
                             </div>
                           </div>
                         </el-card>
                       </router-link>
                     </el-col>
-                </el-row>
+                </el-row> -->
+                <el-row>
+                    <el-col  :xs="12" :sm="8" :md="6" :lg="4" :xl="4">
+                      <router-link :to="{name:'policy'}">
+                        <el-card class="volun-card">                       
+                            <img :src='volunteerList[i].avatar' class="image">                     
+                          <div style="padding: 4px;" class="volun-box">
+                            <span class="volun volun-name">{{volunteerList[i].name}}</span>
+                            <span class="volun volun-age">{{volunteerList[i].brth}}</span>
+                            <div class="volun volun-job">职业：{{volunteerList[i].job}}</div>
+                            <div class="volun volun-hobby">爱好：{{volunteerList[i].hobby}}</div>            
+                            <div class="bottom clearfix">
+                              <el-button type="text" class="button">查看详情</el-button>
+                            </div>
+                          </div>
+                        </el-card>
+                      </router-link>
+                    </el-col>
+                
+
+                
+                    <el-col  :xs="12" :sm="8" :md="6" :lg="4" :xl="4">
+                      <router-link :to="{name:'policy'}">
+                        <el-card class="volun-card">                       
+                            <img :src='volunteerList[i+1].avatar' class="image">                     
+                          <div style="padding: 4px;" class="volun-box">
+                            <span class="volun volun-name">{{volunteerList[i+1].name}}</span>
+                            <span class="volun volun-age">{{volunteerList[i+1].brth}}</span>
+                            <div class="volun volun-job">职业：{{volunteerList[i+1].job}}</div>
+                            <div class="volun volun-hobby">爱好：{{volunteerList[i+1].hobby}}</div>            
+                            <div class="bottom clearfix">
+                              <el-button type="text" class="button">查看详情</el-button>
+                            </div>
+                          </div>
+                        </el-card>
+                      </router-link>
+                    </el-col>
+                
+
+              
+                    <el-col  :xs="12" :sm="8" :md="6" :lg="4" :xl="4">
+                      <router-link :to="{name:'policy'}">
+                        <el-card class="volun-card">                       
+                            <img :src='volunteerList[i+2].avatar' class="image">                     
+                          <div style="padding: 4px;" class="volun-box">
+                            <span class="volun volun-name">{{volunteerList[i+2].name}}</span>
+                            <span class="volun volun-age">{{volunteerList[i+2].brth}}</span>
+                            <div class="volun volun-job">职业：{{volunteerList[i+2].job}}</div>
+                            <div class="volun volun-hobby">爱好：{{volunteerList[i+2].hobby}}</div>            
+                            <div class="bottom clearfix">
+                              <el-button type="text" class="button">查看详情</el-button>
+                            </div>
+                          </div>
+                        </el-card>
+                      </router-link>
+                    </el-col>
+             
+
+
+               
+                    <el-col  :xs="12" :sm="8" :md="6" :lg="4" :xl="4">
+                      <router-link :to="{name:'policy'}">
+                        <el-card class="volun-card">                       
+                            <img :src='volunteerList[i+3].avatar' class="image">                     
+                          <div style="padding: 4px;" class="volun-box">
+                            <span class="volun volun-name">{{volunteerList[i+3].name}}</span>
+                            <span class="volun volun-age">{{volunteerList[i+3].brth}}</span>
+                            <div class="volun volun-job">职业：{{volunteerList[i+3].job}}</div>
+                            <div class="volun volun-hobby">爱好：{{volunteerList[i+3].hobby}}</div>            
+                            <div class="bottom clearfix">
+                              <el-button type="text" class="button">查看详情</el-button>
+                            </div>
+                          </div>
+                        </el-card>
+                      </router-link>
+                    </el-col>
+              
+
+               
+                    <el-col  :xs="12" :sm="8" :md="6" :lg="4" :xl="4">
+                      <router-link :to="{name:'policy'}">
+                        <el-card class="volun-card">                       
+                            <img :src='volunteerList[i+4].avatar' class="image">                     
+                          <div style="padding: 4px;" class="volun-box">
+                            <span class="volun volun-name">{{volunteerList[i+4].name}}</span>
+                            <span class="volun volun-age">{{volunteerList[i+4].brth}}</span>
+                            <div class="volun volun-job">职业：{{volunteerList[i+4].job}}</div>
+                            <div class="volun volun-hobby">爱好：{{volunteerList[i+4].hobby}}</div>            
+                            <div class="bottom clearfix">
+                              <el-button type="text" class="button">查看详情</el-button>
+                            </div>
+                          </div>
+                        </el-card>
+                      </router-link>
+                    </el-col>
+
+                    <el-col  :xs="12" :sm="8" :md="6" :lg="4" :xl="4">
+                      <router-link :to="{name:'policy'}">
+                        <el-card class="volun-card">                       
+                            <img :src='volunteerList[i+5].avatar' class="image">                     
+                          <div style="padding: 4px;" class="volun-box">
+                            <span class="volun volun-name">{{volunteerList[i+5].name}}</span>
+                            <span class="volun volun-age">{{volunteerList[i+5].brth}}</span>
+                            <div class="volun volun-job">职业：{{volunteerList[i+5].job}}</div>
+                            <div class="volun volun-hobby">爱好：{{volunteerList[i+5].hobby}}</div>            
+                            <div class="bottom clearfix">
+                              <el-button type="text" class="button">查看详情</el-button>
+                            </div>
+                          </div>
+                        </el-card>
+                      </router-link>
+                    </el-col>
+                </el-row>             
+                
                 <div class="pagination">
-                  <el-pagination claaa="pagination-block"
-                    layout="prev, pager, next"
-                    :total="50">
-                  </el-pagination>
+                    <div style="text-align:center;margin:10px auto">第{{page}}页 {{warning}}</div>
+                    <el-button-group>
+                      <el-button plain icon="el-icon-arrow-left" @click="prev()">上一页</el-button>
+                      <el-button plain @click="next()">下一页<i class="el-icon-arrow-right el-icon--right"></i></el-button>
+                    </el-button-group>
                 </div>
-            </div>
-        
+            </div>       
     </div>
   </div>
 </template>
@@ -67,6 +179,9 @@ export default {
   data () {
     
     return {
+        i: 0,
+        page: 1,
+        warning: null,
        options: [{
           value: '选项1',
           label: '按好评度'
@@ -263,7 +378,27 @@ export default {
     };
   },
   methods: {
-    
+     prev(){
+      if((this.page-1)>=1){
+        this.i-=6;
+        this.page--;
+        this.warning=null;
+      }
+      else{
+        this.warning="已经是第一页了";
+      }
+    },
+    next(){
+      console.log(this.page+1+'   '+this.volunteerList.length/6+'  '+this.volunteerList.length)
+      if((this.page+1)<=Math.ceil(this.volunteerList.length/6)){
+        this.i+=6;
+        this.page++;
+        this.warning=null;
+      }
+      else{
+        this.warning="已经是最后一页了";
+      }
+    }
   },
   // mounted:function(){
   //   let formData={
@@ -291,77 +426,75 @@ export default {
 .pagination{
   width:100%;
 }
-.el-pagination{
-  text-align: center;
-  margin:20px auto;
+.el-button-group{
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
 }
-.pagination-block{
-  margin:0 auto;
-}
-  .content{
+.content{
     width: 80%;
     margin: 2% auto;
   }
-  .volun-welcome-word{
+.volun-welcome-word{
     color:bisque;
   }
-  .volun-select{
+.volun-select{
     margin:20px auto 30px;;
     padding:10px;
     border-radius: 5px;
     background: #fff;
     background:rgba(255,255,255,0.8);
   }
-  .volun-content{
+.volun-content{
     border-radius: 5px;
     padding:10px;
     background: #fff;
     background:rgba(255,255,255,0.8);
-  }
+}
   /* .el-card__body{
     background: #fff;
     background:rgba(255,255,255,0.8);
   } */
-  .volun{
+.volun{
     user-select: none;
     cursor: pointer;
   }
-  .volun-word{
+.volun-word{
     margin-left:10px;
   }
-  .volun-tag{
+.volun-tag{
     margin-left:20px;
     display: inline-block;
   }
-  .volun-tag-word:hover{
+.volun-tag-word:hover{
     cursor: pointer;
     user-select: none;
   }
-  .volun-card{
+.volun-card{
     /* width:88%;
     height:88%; */
     padding:2px;
     margin:2px 10px 3px 0;
     display:block;
   }
-  .volun-age{
+.volun-age{
     float:right;
   }
-  .text {
+.text {
     font-size: 14px;
   }
-  time {
+time {
     font-size: 13px;
     color: #999;
   }
   
   
-  .bottom {
+.bottom {
     margin-top: 13px;
     line-height: 12px;
   }
 
-  .button {
+.button {
     padding: 0;
     float: right;
   }

@@ -9,7 +9,7 @@
           <router-link :to="{name:'home'}">首页</router-link>
         </el-menu-item>
         <el-submenu index="2">
-          <template slot="title">志愿服务</template>
+          <template slot="title">老人/志愿者</template>
           <router-link :to="{name:'oldpeople'}">
             <el-menu-item index="2-1">
               老人
